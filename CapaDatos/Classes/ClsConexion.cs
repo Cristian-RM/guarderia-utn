@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
-    public class ClsConexion
+    public class ClsConexion : clsOperacion
     {
         //String de coneccion para nuestro SQL SERVER....
         public String coneccion = "Data Source = localhost;" +
          "Initial Catalog=dbGuarderia;" +
-         "User id=UserExpediente;" +
+         "User id=guarderia;" +
          "Password=12345;";
 
+        public SqlConnection cnn;
         //public String coneccion = "Data Source=DESKTOP-5S8K8TU;Initial Catalog=DbExpedientes;Integrated Security=True";
         //public String coneccion = "Server=localhost, Authentication=Windows Authentication, Database= DbExpediente";
         //public String coneccion = "Data Source=LEONY-PC;Initial Catalog=NORTHWND;Integrated Security=True";
@@ -24,7 +25,7 @@ namespace CapaDatos.Classes
         {
             try
             {
-                SqlConnection cnn = new SqlConnection(this.coneccion);//Probamos que ahy coneccion.
+                cnn = new SqlConnection(this.coneccion);//Probamos que ahy coneccion.
                 cnn.Close();//Cerramos la coneccion
                 return true;
             }
