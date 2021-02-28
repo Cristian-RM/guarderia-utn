@@ -13,10 +13,6 @@ namespace CapaDatos.Classes
         public int ID { set; get; }
         public int IDchild { set; get; }
         public String TipoRelacion { set; get; }
-<<<<<<< HEAD
-=======
-
->>>>>>> e411dc82704a3ccc429ba60007e689012646441c
         ///Atributos
         ///
         public ClsChildRelations()
@@ -26,8 +22,4 @@ namespace CapaDatos.Classes
             this.TipoRelacion = "";
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e411dc82704a3ccc429ba60007e689012646441c
