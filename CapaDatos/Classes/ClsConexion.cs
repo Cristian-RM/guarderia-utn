@@ -11,10 +11,10 @@ namespace CapaDatos.Classes
     public class ClsConexion : clsOperacion
     {
         //String de coneccion para nuestro SQL SERVER....
-        public String coneccion = "Data Source = localhost;" +
-         "Initial Catalog=dbGuarderia;" +
-         "User id=guarderia;" +
-         "Password=12345;";
+        public String coneccion = "Data Source = SQL5102.site4now.net;" +
+         "Initial Catalog=DB_A6E822_dbguarderia;" +
+         "User id=DB_A6E822_dbguarderia_admin;" +
+         "Password=cristian20;";
 
         public SqlConnection cnn;
         //public String coneccion = "Data Source=DESKTOP-5S8K8TU;Initial Catalog=DbExpedientes;Integrated Security=True";
