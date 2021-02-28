@@ -9,26 +9,25 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    public  class asistenciaController : ClsConexion
+    public class alergiasController : ClsConexion
     {
-
-        public ClsAsisntencias asis { get; set; }
+        public ClsAlergias aler { get; set; }
         public DataTable dataTable { get; set; }
         public int filasAfectadas { get; set; }
         public int numError { get; set; }
         public string mensajeError { get; set; }
         public string operacion { get; set; }
 
-        public asistenciaController(ClsAsisntencias asis)
+        public alergiasController(ClsAlergias aler)
         {
-            this.asis = asis;
+            this.aler = aler;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
 
-        public asistenciaController()
+        public alergiasController()
         {
-            this.asis = new ClsAsisntencias();
+            this.aler = new ClsAlergias();
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
@@ -43,20 +42,15 @@ namespace CapaDatos.Controlladores
                 SqlConnection conectado = new SqlConnection(this.coneccion);
                 conectado.Open();
 
-                SqlCommand coneccion = new SqlCommand("stp_CPAASISTENCIAS_CRUD", conectado);
+                SqlCommand coneccion = new SqlCommand("stp_CPALERGIAS_CRUD", conectado);
                 //coneccion.Connection = conectado;
                 coneccion.CommandType = CommandType.StoredProcedure;
 
                 //Parámetros
 
-                coneccion.Parameters.Add(Parametro("@aID", this.asis.ID));
-                coneccion.Parameters.Add(Parametro("@aIDchild", this.asis.IDchild));
-                coneccion.Parameters.Add(Parametro("@aFechaRegistro", this.asis.FechaRegistro));
-                coneccion.Parameters.Add(Parametro("@aMES", this.asis.Mes));
-                coneccion.Parameters.Add(Parametro("@aHoraEntrada", this.asis.HoraEntrada));
-                coneccion.Parameters.Add(Parametro("@aHoraSalida", this.asis.HoraSalida));
-                coneccion.Parameters.Add(Parametro("@@aDetalles", this.asis.Detalles));
-                coneccion.Parameters.Add(Parametro("@aSNCANCELADO", this.asis.SNCANCELADO));
+                coneccion.Parameters.Add(Parametro("@aID", this.aler.ID));
+                coneccion.Parameters.Add(Parametro("@aNombreIngrediente", this.aler.NombreIngrediente));
+                coneccion.Parameters.Add(Parametro("@aIDchild", this.aler.IDchild));
 
                 coneccion.Parameters.Add(Parametro("@pOperacion", this.operacion));
 
@@ -99,9 +93,9 @@ namespace CapaDatos.Controlladores
             return mensajeError;
         }
 
-        public String crud(string operacion, ClsAsisntencias asis)
+        public String crud(string operacion, ClsAlergias aler)
         {
-            this.asis = asis;
+            this.aler = aler;
             this.operacion = operacion;
             return crud();
         }
@@ -112,9 +106,9 @@ namespace CapaDatos.Controlladores
             return crud();
         }
 
-        public String crud(ClsAsisntencias asis)
+        public String crud(ClsAlergias aler)
         {
-            this.asis = asis;
+            this.aler = aler;
             return crud();
         }
 
@@ -122,18 +116,12 @@ namespace CapaDatos.Controlladores
         {
             foreach (DataRow row in data.Rows)
             {
-                this.asis = new ClsAsisntencias();
+                this.aler = new ClsAlergias();
                 try
                 {
-                    this.asis.ID = row.Field<int>("ID");
-                    this.asis.IDchild = row.Field<int>("IDchild");
-                    this.asis.FechaRegistro = row.Field<string>("FechaRegistro");
-                    this.asis.Mes = row.Field<String>("MES");
-                    this.asis.HoraEntrada = row.Field<String>("HoraEntrada");
-                    this.asis.HoraSalida = row.Field<string>("HoraSalida");
-                    this.asis.Detalles = row.Field<String>("Detalles");
-                    this.asis.SNCANCELADO = this.asis.isactivoBYTE(row.Field<String>("SNCANCELADO"));
-
+                    this.aler.ID = row.Field<int>("ID");
+                    this.aler.NombreIngrediente = row.Field<string>("NombreIngrediente");
+                    this.aler.IDchild = row.Field<int>("IDchild");
                 }
                 catch (Exception ex)
                 {
@@ -143,3 +131,4 @@ namespace CapaDatos.Controlladores
         }
     }
 }
+

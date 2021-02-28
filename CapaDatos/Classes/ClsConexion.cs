@@ -42,6 +42,14 @@ namespace CapaDatos.Classes
             parametro.Direction = ParameterDirection.Input;
             return parametro;
         }
+        public SqlParameter Parametro(String campo, decimal value)
+        {
+            SqlParameter parametro = new SqlParameter(campo, value);
+            parametro.DbType = DbType.Int64;
+            parametro.Direction = ParameterDirection.Input;
+            return parametro;
+        }
+
 
         public SqlParameter Parametro(String campo, Double value)
         {

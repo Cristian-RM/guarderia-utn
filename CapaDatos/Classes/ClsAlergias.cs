@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
-    public class ClsPlatosMenu : Entidad
+    public class ClsAlergias : Entidad
     {
-        public int ID;
-        public String NombrePlato;
-        public int IDmenu;
+        public int ID { get; set; }
+        public String NombreIngrediente { get; set; }
+        public int IDchild { get; set; }
         ///Atributos
         ///
-        public ClsPlatosMenu()
+        public ClsAlergias()
         {
             this.ID = 0;
-            this.NombrePlato = "";
-            this.IDmenu = 0;
+            this.NombreIngrediente = "";
+            this.IDchild = 0;
         }
-    }
+
 }

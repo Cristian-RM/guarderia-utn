@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    class encargadoController :  ClsConexion
+    public class encargadoController :  ClsConexion
     {
         public ClsEncargados enca { get; set; }
         public DataTable dataTable { get; set; }
