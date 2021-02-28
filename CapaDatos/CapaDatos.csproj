@@ -64,10 +64,14 @@
     <Compile Include="Controlladores\asistenciaController.cs" />
     <Compile Include="Controlladores\childController.cs" />
     <Compile Include="Controlladores\childRelationController.cs" />
+    <Compile Include="Controlladores\ingredienteController.cs" />
     <Compile Include="Controlladores\consumoController.cs" />
+    <Compile Include="Controlladores\detalleAsistenciaController.cs" />
     <Compile Include="Controlladores\detalleConsumoController.cs" />
     <Compile Include="Controlladores\encargadoController.cs" />
+    <Compile Include="Controlladores\ingredientePlatoController.cs" />
     <Compile Include="Controlladores\menusController.cs" />
+    <Compile Include="Controlladores\mfacturaController.cs" />
     <Compile Include="Controlladores\platoMenuController.cs" />
     <Compile Include="Controlladores\platosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

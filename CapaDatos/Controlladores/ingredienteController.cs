@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    internal class clsIngredienteController : ClsConexion
+    internal class ingredienteController : ClsConexion
     {
         public ClsIngredientes ingrediente { get; set; }
         public DataTable dataTable { get; set; }
@@ -18,14 +18,14 @@ namespace CapaDatos.Controlladores
         public string mensajeError { get; set; }
         public string operacion { get; set; }
 
-        public clsIngredienteController(ClsIngredientes ingrediente)
+        public ingredienteController(ClsIngredientes ingrediente)
         {
             this.ingrediente = ingrediente;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
 
-        public clsIngredienteController()
+        public ingredienteController()
         {
             this.ingrediente = new ClsIngredientes();
             filasAfectadas = 0;
@@ -42,7 +42,7 @@ namespace CapaDatos.Controlladores
                 SqlConnection conectado = new SqlConnection(this.coneccion);
                 conectado.Open();
 
-                SqlCommand coneccion = new SqlCommand("stp_CPChilds_CRUD", conectado);
+                SqlCommand coneccion = new SqlCommand("stp_CPINGREDIENTES_CRUD", conectado);
                 //coneccion.Connection = conectado;
                 coneccion.CommandType = CommandType.StoredProcedure;
 

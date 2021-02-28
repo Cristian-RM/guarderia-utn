@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    class platoMenuController : ClsConexion
+    internal class platoMenuController : ClsConexion
     {
         public ClsPlatosMenu plaMenu { get; set; }
         public DataTable dataTable { get; set; }
@@ -116,7 +116,7 @@ namespace CapaDatos.Controlladores
         {
             foreach (DataRow row in data.Rows)
             {
-                this.plaMenu = new ClsPlatosMenu ();
+                this.plaMenu = new ClsPlatosMenu();
                 try
                 {
                     this.plaMenu.ID = row.Field<int>("ID");
