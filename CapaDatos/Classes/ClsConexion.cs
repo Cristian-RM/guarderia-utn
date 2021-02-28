@@ -13,7 +13,7 @@ namespace CapaDatos.Classes
         //String de coneccion para nuestro SQL SERVER....
         public String coneccion = "Data Source = localhost;" +
          "Initial Catalog=dbGuarderia;" +
-         "User id=UserExpediente;" +
+         "User id=guarderia;" +
          "Password=12345;";
         //public String coneccion = "Data Source=DESKTOP-5S8K8TU;Initial Catalog=DbExpedientes;Integrated Security=True";
         //public String coneccion = "Server=localhost, Authentication=Windows Authentication, Database= DbExpediente";
