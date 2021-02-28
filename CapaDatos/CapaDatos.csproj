@@ -56,7 +56,10 @@
     <Compile Include="Classes\ClsConexion.cs" />
     <Compile Include="Classes\ClsEncargados.cs" />
     <Compile Include="Classes\ClsMfacturas.cs" />
+    <Compile Include="Classes\clsOperacion.cs" />
     <Compile Include="Classes\ClsPlatosMenu.cs" />
+    <Compile Include="Classes\Entidad.cs" />
+    <Compile Include="Controlladores\childController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

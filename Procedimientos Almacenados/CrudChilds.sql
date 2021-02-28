@@ -11,7 +11,7 @@ Create or alter  procedure [dbo].[stp_CPChilds_CRUD] (
 @aIDmatricula int =-1,
 @aNombre varchar(150)='' ,
 @aFechaRegistro datetime='2000-01-01',
-@aFechaNacimiento datetime='2001-01-01',
+@aFechaNacimiento date='2001-01-01',
 @aOperacion varchar(1) = 'n',
 @aMensajeError varchar(max) = 'no definido' output  ,
 @anumErr int= -1 output  
@@ -161,7 +161,7 @@ BEGIN
 					END
 			
 			SELECT 			
-					IDmatricula ----Se necesita el ID en todo momento
+				   IDmatricula ----Se necesita el ID en todo momento
 				  ,[Nombre]
 				  ,[FechaRegistro]
 				  ,[FechaNacimiento]
