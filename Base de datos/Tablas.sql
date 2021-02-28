@@ -8,7 +8,7 @@ CREATE TABLE Childs(
 IDmatricula int identity(1,1)primary key NOT NULL,
 Nombre varchar(150) not null,
 FechaRegistro datetime default getdate(),
-FechaNacimiento datetime NULL,
+FechaNacimiento date NULL,
 )
 go
 ---Un niño tendra relaciones con ciertas personas
@@ -76,7 +76,7 @@ CREATE TABLE Consumos(
 ID int identity(1,1)primary key NOT NULL,
 IDchild int not null ,
 IDmenu int not null ,
-FechaConsumo datetime default getdate(),
+FechaConsumo date default getdate(),
 SNCANCELADO BIT DEFAULT 0 NOT NULL ,
 )
 go
