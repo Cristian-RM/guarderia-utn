@@ -13,7 +13,8 @@ namespace CapaDatos.Classes
         public string update { get; }
         public string gets { get; }
         public string list { get; }
-        public string listarContrataciones { get; }
+        public string listarDetalles { get; }
+        public string listarPedientes { get; }
         public string buscar { get; }
 
         public clsOperacion()
@@ -24,7 +25,22 @@ namespace CapaDatos.Classes
             gets = "g";
             list = "l";
             buscar = "b";
-            listarContrataciones = "lb";
+            listarDetalles = "lb";
+            listarPedientes = "lp";
+        }
+
+        public bool isconsulta(string op)
+        {
+            if (op == "i" || op == "u" || op == "d")
+            {
+                return false;
+            }
+            else
+            if (op == "g" || op == "b" || op == "l" || op == "lb" || op == "lp")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

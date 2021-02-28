@@ -59,7 +59,11 @@
     <Compile Include="Classes\clsOperacion.cs" />
     <Compile Include="Classes\ClsPlatosMenu.cs" />
     <Compile Include="Classes\Entidad.cs" />
+    <Compile Include="Controlladores\abonadosController.cs" />
+    <Compile Include="Controlladores\asistenciaController.cs" />
     <Compile Include="Controlladores\childController.cs" />
+    <Compile Include="Controlladores\childRelationController.cs" />
+    <Compile Include="Controlladores\encargadoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

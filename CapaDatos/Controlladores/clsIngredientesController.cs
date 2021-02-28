@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    public class childController : ClsConexion
+    public class clsIngredientesController : ClsConexion
+
     {
         public ClsChilds child { get; set; }
         public DataTable dataTable { get; set; }
@@ -18,14 +19,14 @@ namespace CapaDatos.Controlladores
         public string mensajeError { get; set; }
         public string operacion { get; set; }
 
-        public childController(ClsChilds child)
+        public clsIngredientesController(ClsChilds child)
         {
             this.child = child;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
 
-        public childController()
+        public clsIngredientesController()
         {
             this.child = new ClsChilds();
             filasAfectadas = 0;

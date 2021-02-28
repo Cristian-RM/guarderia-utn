@@ -1,5 +1,4 @@
-USE [dbGuarderia]
-GO
+
 /****** Object:  StoredProcedure [dbo].[stp_CPABONADOS_ACTUALIZAR]    Script Date: 15/02/2021 11:11:09 ******/
 SET ANSI_NULLS ON
 GO
