@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    class platosController : ClsConexion
+    public class platosController : ClsConexion
     {
         public ClasPlato plato { get; set; }
         public DataTable dataTable { get; set; }
@@ -48,7 +48,6 @@ namespace CapaDatos.Controlladores
 
                 //Parámetros
                 coneccion.Parameters.Add(Parametro("@aNombre", this.plato.Nombre));
-
 
                 coneccion.Parameters.Add(Parametro("@pOperacion", this.operacion));
 
