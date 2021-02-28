@@ -25,3 +25,4 @@ namespace CapaDatos.Classes
             this.FechaCreacion = "";
         }
     }
+}

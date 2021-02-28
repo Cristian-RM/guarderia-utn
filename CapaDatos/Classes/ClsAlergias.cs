@@ -13,6 +13,7 @@ namespace CapaDatos.Classes
         public int ID { get; set; }
         public String NombreIngrediente { get; set; }
         public int IDchild { get; set; }
+
         ///Atributos
         ///
         public ClsAlergias()
@@ -21,5 +22,5 @@ namespace CapaDatos.Classes
             this.NombreIngrediente = "";
             this.IDchild = 0;
         }
-
+    }
 }

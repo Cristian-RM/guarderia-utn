@@ -9,11 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-<<<<<<< HEAD
-    public  class asistenciaController : ClsConexion
-=======
-    internal class asistenciaController : ClsConexion
->>>>>>> e411dc82704a3ccc429ba60007e689012646441c
+    public class asistenciaController : ClsConexion
     {
         public ClsAsisntencias asis { get; set; }
         public DataTable dataTable { get; set; }
