@@ -21,5 +21,6 @@ namespace CapaDatos.Classes
             this.NombreIngrediente = "";
             this.IDchild = 0;
         }
-
+    }
 }
+

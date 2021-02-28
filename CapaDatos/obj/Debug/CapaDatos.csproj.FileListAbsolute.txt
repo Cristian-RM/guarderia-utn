@@ -8,3 +8,9 @@ D:\Guardería\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.dll
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\bin\Debug\CapaDatos.pdb
