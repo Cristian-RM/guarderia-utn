@@ -58,19 +58,5 @@ namespace CapaDatos.Classes
             parametro.Direction = ParameterDirection.Input;
             return parametro;
         }
-
-        public bool isconsulta(string op)
-        {
-            if (op == "i" || op == "u" || op == "d")
-            {
-                return false;
-            }
-            else
-            if (op == "g" || op == "b" || op == "l" || op == "lb")
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }

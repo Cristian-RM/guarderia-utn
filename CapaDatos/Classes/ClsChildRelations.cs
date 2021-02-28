@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
-    class ClsChildRelations : ClsConexion
+    internal class ClsChildRelations : ClsConexion
     {
         public int IDchild;
         public String TipoRelacion;
+
         ///Atributos
         ///
         public ClsChildRelations()
@@ -33,7 +34,6 @@ namespace CapaDatos.Classes
             {
                 try
                 {
-
                     //creamos nuestra propia coneccion
                     SqlConnection conectado = new SqlConnection(this.coneccion);
                     conectado.Open();
@@ -48,21 +48,18 @@ namespace CapaDatos.Classes
                     coneccion.ExecuteNonQuery();
                     conectado.Close();
                     vResultado = "Ejecutado con exito";
-
-
                 }
                 catch (Exception Ex)
                 {
                     //MessageBox.Show(Ex.Message);
                     vResultado = Ex.Message;
-
                 }
             }
             return vResultado;
-
         }
 
         private DataSet dataTable = new DataSet();
+
         public DataSet GetListaChildRelacion(ClsChildRelations pClsCRelation, String pOperacion)
         {
             try
@@ -90,8 +87,6 @@ namespace CapaDatos.Classes
                 Console.WriteLine(Ex.Message);
             }
             return dataTable;
-
-
         }
     }
 }
