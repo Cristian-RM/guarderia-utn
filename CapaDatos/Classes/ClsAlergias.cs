@@ -13,6 +13,7 @@ namespace CapaDatos.Classes
         public int ID { get; set; }
         public String NombreIngrediente { get; set; }
         public int IDchild { get; set; }
+
         ///Atributos
         ///
         public ClsAlergias()
