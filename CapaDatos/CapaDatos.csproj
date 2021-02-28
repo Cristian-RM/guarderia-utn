@@ -45,7 +45,6 @@
     <Compile Include="Classes\ClasPlato.cs" />
     <Compile Include="Classes\ClsAbonados.cs" />
     <Compile Include="Classes\ClsAsisntencias.cs" />
-    <Compile Include="Classes\ClsChildRelations.cs" />
     <Compile Include="Classes\ClsChilds.cs" />
     <Compile Include="Classes\ClsConsumos.cs" />
     <Compile Include="Classes\ClsDetalleAsistencia.cs" />
@@ -59,11 +58,16 @@
     <Compile Include="Classes\clsOperacion.cs" />
     <Compile Include="Classes\ClsPlatosMenu.cs" />
     <Compile Include="Classes\Entidad.cs" />
+    <Compile Include="Classes\ClsChildRelations.cs" />
     <Compile Include="Controlladores\abonadosController.cs" />
     <Compile Include="Controlladores\asistenciaController.cs" />
     <Compile Include="Controlladores\childController.cs" />
     <Compile Include="Controlladores\childRelationController.cs" />
+    <Compile Include="Controlladores\clsIngredienteController.cs" />
+    <Compile Include="Controlladores\detalleAsistenciaController.cs" />
     <Compile Include="Controlladores\encargadoController.cs" />
+    <Compile Include="Controlladores\ingredientePlatoController.cs" />
+    <Compile Include="Controlladores\mfacturaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

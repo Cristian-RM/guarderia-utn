@@ -18,6 +18,7 @@ namespace CapaDatos.Classes
         public String Telefono { get; set; }
         public String Banco { get; set; }
         public String CuentaIBAM { get; set; }
+
         ///Atributos
         ///
         public ClsAbonados()
@@ -31,5 +32,5 @@ namespace CapaDatos.Classes
             this.Banco = "";
             this.CuentaIBAM = "";
         }
-
+    }
 }
