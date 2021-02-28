@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
-    internal class ClsIngredientes : ClsConexion
+    public class ClsIngredientes : Entidad
     {
         public String Nombre { get; set; }
 

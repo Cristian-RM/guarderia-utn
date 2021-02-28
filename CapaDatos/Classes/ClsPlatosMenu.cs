@@ -13,6 +13,7 @@ namespace CapaDatos.Classes
         public int ID;
         public String NombrePlato;
         public int IDmenu;
+
         ///Atributos
         ///
         public ClsPlatosMenu()
