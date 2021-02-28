@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    public  class asistenciaController : ClsConexion
+    public class AsistenciaController : ClsConexion
     {
         public ClsAsisntencias asis { get; set; }
         public DataTable dataTable { get; set; }
@@ -18,14 +18,14 @@ namespace CapaDatos.Controlladores
         public string mensajeError { get; set; }
         public string operacion { get; set; }
 
-        public asistenciaController(ClsAsisntencias asis)
+        public AsistenciaController(ClsAsisntencias asis)
         {
             this.asis = asis;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
 
-        public asistenciaController()
+        public AsistenciaController()
         {
             this.asis = new ClsAsisntencias();
             filasAfectadas = 0;

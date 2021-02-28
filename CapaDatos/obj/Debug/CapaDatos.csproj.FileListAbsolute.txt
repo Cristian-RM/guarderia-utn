@@ -4,6 +4,8 @@ C:\Users\leony1\source\repos\ProgramacionCapas\CapaDatos\obj\Debug\CapaDatos.csp
 C:\Users\leony1\source\repos\ProgramacionCapas\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\leony1\source\repos\ProgramacionCapas\CapaDatos\obj\Debug\CapaDatos.pdb
 C:\Users\leony1\source\repos\ProgramacionCapas\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+D:\Guardería\CapaDatos\bin\Debug\CapaDatos.dll
+D:\Guardería\CapaDatos\bin\Debug\CapaDatos.pdb
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\Guardería\CapaDatos\obj\Debug\CapaDatos.dll
@@ -16,6 +18,5 @@ C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\obj\Debug\CapaDatos.pd
 C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\bin\Debug\CapaDatos.dll
 C:\Users\crism\OneDrive\Escritorio\Proyecto Web\CapaDatos\bin\Debug\CapaDatos.pdb
 =======
-D:\Guardería\CapaDatos\bin\Debug\CapaDatos.dll
-D:\Guardería\CapaDatos\bin\Debug\CapaDatos.pdb
 >>>>>>> 681c74a089acefeaed81e8ed0eb112b950beb54c
+>>>>>>> 9a001926902f4e10b300ebf93ca05e948a001d08

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    internal class detalleAsistenciaController : ClsConexion
+    public class detalleAsistenciaController : ClsConexion
     {
-        public ClsDetalleAsistencia dasisencia { get; set; }
+        public ClsDetalleAsistencia Dasisencia { get; set; }
         public DataTable dataTable { get; set; }
         public int filasAfectadas { get; set; }
         public int numError { get; set; }
@@ -20,14 +20,14 @@ namespace CapaDatos.Controlladores
 
         public detalleAsistenciaController(ClsDetalleAsistencia dasisencia)
         {
-            this.dasisencia = dasisencia;
+            this.Dasisencia = dasisencia;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
 
         public detalleAsistenciaController()
         {
-            this.dasisencia = new ClsDetalleAsistencia();
+            this.Dasisencia = new ClsDetalleAsistencia();
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
@@ -48,10 +48,10 @@ namespace CapaDatos.Controlladores
 
                 //Parámetros
 
-                coneccion.Parameters.Add(Parametro("@aID", this.dasisencia.ID));
-                coneccion.Parameters.Add(Parametro("@aIDfactura", this.dasisencia.IDfactura));
-                coneccion.Parameters.Add(Parametro("@aIDasistencia", this.dasisencia.IDasistencia));
-                coneccion.Parameters.Add(Parametro("@aFechaCreacion", this.dasisencia.FechaCreacion));
+                coneccion.Parameters.Add(Parametro("@aID", this.Dasisencia.ID));
+                coneccion.Parameters.Add(Parametro("@aIDfactura", this.Dasisencia.IDfactura));
+                coneccion.Parameters.Add(Parametro("@aIDasistencia", this.Dasisencia.IDasistencia));
+                coneccion.Parameters.Add(Parametro("@aFechaCreacion", this.Dasisencia.FechaCreacion));
 
                 coneccion.Parameters.Add(Parametro("@pOperacion", this.operacion));
 
@@ -96,7 +96,7 @@ namespace CapaDatos.Controlladores
 
         public String crud(string operacion, ClsDetalleAsistencia dasisencia)
         {
-            this.dasisencia = dasisencia;
+            this.Dasisencia = dasisencia;
             this.operacion = operacion;
             return crud();
         }
@@ -109,7 +109,7 @@ namespace CapaDatos.Controlladores
 
         public String crud(ClsDetalleAsistencia dasisencia)
         {
-            this.dasisencia = dasisencia;
+            this.Dasisencia = dasisencia;
             return crud();
         }
 
@@ -117,13 +117,13 @@ namespace CapaDatos.Controlladores
         {
             foreach (DataRow row in data.Rows)
             {
-                this.dasisencia = new ClsDetalleAsistencia();
+                this.Dasisencia = new ClsDetalleAsistencia();
                 try
                 {
-                    this.dasisencia.ID = row.Field<int>("ID");
-                    this.dasisencia.IDfactura = row.Field<int>("IDchild");
-                    this.dasisencia.IDasistencia = row.Field<int>("FechaRegistro");
-                    this.dasisencia.FechaCreacion = row.Field<String>("MES");
+                    this.Dasisencia.ID = row.Field<int>("ID");
+                    this.Dasisencia.IDfactura = row.Field<int>("IDchild");
+                    this.Dasisencia.IDasistencia = row.Field<int>("FechaRegistro");
+                    this.Dasisencia.FechaCreacion = row.Field<String>("MES");
                 }
                 catch (Exception ex)
                 {

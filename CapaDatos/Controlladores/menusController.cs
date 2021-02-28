@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    class menusController : ClsConexion
+    public class menusController : ClsConexion
     {
         public ClsMenus menu { get; set; }
         public DataTable dataTable { get; set; }

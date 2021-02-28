@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    internal class ingredientePlatoController : ClsConexion
+    public class ingredientePlatoController : ClsConexion
     {
         public ClsIngredientePlato ingredientePlato { get; set; }
         public DataTable dataTable { get; set; }

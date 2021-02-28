@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-    internal class mfacturaController : ClsConexion
+    public class mfacturaController : ClsConexion
     {
         public ClsMfacturas mfactura { get; set; }
         public DataTable dataTable { get; set; }
