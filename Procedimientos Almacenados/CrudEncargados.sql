@@ -1,6 +1,3 @@
-USE [dbGuarderia]
-GO
-/****** Object:  StoredProcedure [dbo].[stp_CPABONADOS_ACTUALIZAR]    Script Date: 15/02/2021 11:11:09 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -14,52 +11,52 @@ Create or alter  procedure [dbo].[stp_CPEncargados_CRUD] (
 @aNombre varchar(150)='',
 @aDireccion varchar (150)='',
 @aTelefono varchar (10)='',
-@aOperacion varchar(1) = 'n',
-@aMensajeError varchar(max) = 'no definido' output  ,
-@anumErr int= -1 output  
+@pOperacion varchar(2) = 'n',
+@pMensajeError varchar(max) = 'no definido' output  ,
+@pnumErr int= -1 output  
 )
 as 
 BEGIN
 
-		if(@aOperacion = 'n')
+		if(@pOperacion = 'n')
 			BEGIN
 				return 0;
 			END
 				----Insertar una Relación
-		IF (@aOperacion='i')
+		IF (@pOperacion='i')
 			BEGIN
 			if(	@aIDchildRelation=-1)
 					BEGIN
-						set @aMensajeError = 'El Encargado no tiene relación  con el niño.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Encargado no tiene relación  con el niño.'
+						set @pnumErr = 0;
 						return 0;
 					END
 				
 				if(	@aDNI ='')
 					BEGIN
-						set @aMensajeError = ' No puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = ' No puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aNombre ='')
 					BEGIN
-						set @aMensajeError = 'El Nombre del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Nombre del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aDireccion ='')
 					BEGIN
-						set @aMensajeError = 'La Dirección del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'La Dirección del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aTelefono ='')
 					BEGIN
-						set @aMensajeError = 'El Télefono del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Télefono del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
@@ -77,65 +74,65 @@ BEGIN
 						@aDireccion,
 					   @aTelefono)
 				
-					set @aMensajeError = 'El Encargado se ha agregado con éxito.'
-						set @anumErr = 1;
+					set @pMensajeError = 'El Encargado se ha agregado con éxito.'
+						set @pnumErr = 1;
 					return 1
 			END
 
 	
 		----Borrar un Relación
-		IF (@aOperacion='d')
+		IF (@pOperacion='d')
 		BEGIN
 		--Hay que eliminar por el ID, EL ID es el Primary key
 			if(	@aID =-1)
 					BEGIN
-						set @aMensajeError = 'El ID del Encargado es nulo, 0 registros afectados.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El ID del Encargado es nulo, 0 registros afectados.'
+						set @pnumErr = 0;
 						return 0;
 					END
 			
 				DELETE FROM [dbo].[Encargados]
 					  WHERE ID = @aID     --Se elimina por IDs no por el foreing key 
 			
-			set @aMensajeError = 'Se Eliminó correctamente.'
-			set @anumErr = 1;
+			set @pMensajeError = 'Se Eliminó correctamente.'
+			set @pnumErr = 1;
 		END
 
 		----Actualizar una Relación
-		IF (@aOperacion='u')
+		IF (@pOperacion='u')
 		BEGIN
 				if(	@aIDchildRelation=-1)
 					BEGIN
-						set @aMensajeError = 'El Encargado no tiene relación  con el niño.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Encargado no tiene relación  con el niño.'
+						set @pnumErr = 0;
 						return 0;
 					END
 				
 				if(	@aDNI ='')
 					BEGIN
-						set @aMensajeError = ' No puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = ' No puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aNombre ='')
 					BEGIN
-						set @aMensajeError = 'El Nombre del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Nombre del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aDireccion ='')
 					BEGIN
-						set @aMensajeError = 'La Dirección del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'La Dirección del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 
 				if(	@aTelefono ='')
 					BEGIN
-						set @aMensajeError = 'El Télefono del Encargado no puede ir vacio.'
-						set @anumErr = 0;
+						set @pMensajeError = 'El Télefono del Encargado no puede ir vacio.'
+						set @pnumErr = 0;
 						return 0;
 					END
 				
@@ -149,29 +146,45 @@ BEGIN
 					 
 					WHERE ID = @aID     --Se ACTUALIZA por IDs no por el foreing key 
 			  
-			set @aMensajeError = 'Se Actualizó correctamente.'
-			set @anumErr = 1;
+			set @pMensajeError = 'Se Actualizó correctamente.'
+			set @pnumErr = 1;
 	 		
 		END
 
 		-----
-		IF (@aOperacion='l')
+		IF (@pOperacion='l')
 		BEGIN
-				SELECT  
+				SELECT  e.[ID],
 				   [IDchildRelation],
+				   e.DNI,
 				   [Nombre],
 				   [Direccion],
 				   [Telefono]
 				  			 
-			  FROM [dbGuarderia].[dbo].[Encargados] as e inner join dbo.childsRelations as c on e.IDchildRelation=c.ID
-			  where e.IDchildRelation=c.ID
+			  FROM [dbo].[Encargados] as e inner join dbo.childsRelations as c on e.IDchildRelation=c.ID
 			  
-			set @aMensajeError = 'Se listó correctamente.'
-			set @anumErr = 1;
+			  
+			set @pMensajeError = 'Se listó correctamente.'
+			set @pnumErr = 1;
 			
 		END
-		
-		IF (@aOperacion='b')
+				IF (@pOperacion='lb')
+		BEGIN
+				SELECT   e.[ID],
+				   [IDchildRelation],
+				   e.DNI,
+				   [Nombre],
+				   [Direccion],
+				   [Telefono]
+			  FROM [dbo].[Encargados] as e 
+			  inner join dbo.childsRelations as c on e.IDchildRelation=c.ID
+			  where e.DNI=@aDNI
+			  
+			set @pMensajeError = 'Se listó correctamente.'
+			set @pnumErr = 1;
+			
+		END
+		IF (@pOperacion='b')
 		BEGIN
 			SELECT  
 				   [IDchildRelation],
@@ -179,7 +192,7 @@ BEGIN
 				   [Direccion],
 				   [Telefono]
 				  			 
-			  FROM [dbGuarderia].[dbo].[Encargados]  as e inner join dbo.childsRelations as c on e.IDchildRelation=c.ID
+			  FROM @pnumErr[dbo].[Encargados]  as e inner join dbo.childsRelations as c on e.IDchildRelation=c.ID
 			  where e.IDchildRelation=c.ID and
 			  
 			  [IDchildRelation] like '%'+ @aIDchildRelation+'%' and
@@ -187,16 +200,16 @@ BEGIN
 			   and  [Telefono] like '%'+ @aTelefono+'%'
 
 			   
-			set @aMensajeError = 'Se buscó correctamente.'
-			set @anumErr = 1;
+			set @pMensajeError = 'Se buscó correctamente.'
+			set @pnumErr = 1;
 		END
 
 
-		IF (@aOperacion='g')
+		IF (@pOperacion='g')
 		BEGIN
 				if(	@aID =-1)
 					BEGIN
-						set @aMensajeError = 'El ID de la Relación no puede ir vacio.'
+						set @pMensajeError = 'El ID de la Relación no puede ir vacio.'
 						return 0;
 					END
 			
@@ -206,9 +219,9 @@ BEGIN
 				   [Direccion],
 				   [Telefono]
 				  			 
-			  FROM [dbGuarderia].[dbo].[Encargados] 
+			  FROM @pnumErr[dbo].[Encargados] 
 			  where  ID = @aID     --Se obtiene por IDs no por el foreing key 			  
-			set @aMensajeError = 'Se obtuvo correctamente por el ID' + CONVERT (VARCHAR(MAX) ,@aID);
-			set @anumErr = 1;
+			set @pMensajeError = 'Se obtuvo correctamente por el ID' + CONVERT (VARCHAR(MAX) ,@aID);
+			set @pnumErr = 1;
 		END
 END

@@ -15,14 +15,14 @@ namespace webServicesGuarderia.Facturacion
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
+    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente.
     // [System.Web.Script.Services.ScriptService]
     public class WSFactuModule : System.Web.Services.WebService
     {
         private List<DataTable> result = new List<DataTable>();
 
         [WebMethod]
-        public List<DataTable> crudChild(int ID, int IDAbonado, String mes, String FechaCreacion, string op)
+        public List<DataTable> crudmfactura(int ID, int IDAbonado, String mes, String FechaCreacion, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsMfacturas fact = new ClsMfacturas();
@@ -78,11 +78,13 @@ namespace webServicesGuarderia.Facturacion
         }
 
         [WebMethod]
-        public List<DataTable> crudAsistencia(int ID, String FechaRegistro, string mes, string horaEntrada, String horaSalida, string detalles,byte Cancelado, string op)
+        public List<DataTable> crudAsistencia(int ID, int idChild, String FechaRegistro, string mes,
+            string horaEntrada, String horaSalida, string detalles, byte Cancelado, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsAsisntencias Asis = new ClsAsisntencias();
             Asis.ID = ID;
+            Asis.IDchild = idChild;
             Asis.FechaRegistro = FechaRegistro;
             Asis.Mes = mes;
             Asis.HoraEntrada = horaEntrada;
@@ -109,14 +111,14 @@ namespace webServicesGuarderia.Facturacion
         }
 
         [WebMethod]
-        public List<DataTable> crudDetalleConsumos(int ID, int IDcosumo, String fechaCreacion, string op)
+        public List<DataTable> crudDetalleConsumos(int ID, int IDcosumo, int IDfactura, String fechaCreacion, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsDetalleConsumos deCon = new ClsDetalleConsumos();
             deCon.ID = ID;
             deCon.IDconsumo = IDcosumo;
+            deCon.IDfactura = IDfactura;
             deCon.FechaCreacion = fechaCreacion;
-
 
             //Genero un controladro
             detalleConsumoController deConC = new detalleConsumoController(deCon);
@@ -137,11 +139,12 @@ namespace webServicesGuarderia.Facturacion
         }
 
         [WebMethod]
-        public List<DataTable> crudConsumos(int ID, int IDChild, int IDMenu,string FechaConsumo,int cancelado, string op)
+        public List<DataTable> crudConsumos(int ID, int IDChild, int IDMenu, string FechaConsumo, int cancelado, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsConsumos deCon = new ClsConsumos();
             deCon.ID = ID;
+            deCon.IDchild = IDChild;
             deCon.Idmenu = IDMenu;
             deCon.FechaConsumo = FechaConsumo;
             deCon.SnCancelado = cancelado;
