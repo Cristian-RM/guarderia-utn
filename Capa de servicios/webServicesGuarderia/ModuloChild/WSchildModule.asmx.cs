@@ -49,6 +49,127 @@ namespace webServicesGuarderia.ModuloChild
             return result;
         }
 
+        [WebMethod]
+        public List<DataTable> crudChildRelations(int ID, int IDChild, String TipoRelacion, string op)
+        {
+            //Hago un objeto de la clase correspondiente
+            ClsChildRelations childRelation = new ClsChildRelations();
+            childRelation.ID = ID;
+            childRelation.IDchild = IDChild;
+            childRelation.TipoRelacion = TipoRelacion;
+
+            //Genero un controladro
+            childRelationController childC = new childRelationController(childRelation);
+            childC.operacion = op;
+
+            //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
+            String mensajeErr = childC.crud();
+            int nummErr = childC.numError;
+
+            DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
+            DataTable datos = childC.dataTable;
+            datos.TableName = "datos";
+            result = new List<DataTable>();
+            result.Add(datos);
+            result.Add(infoTable);
+
+            return result;
+        }
+
+        [WebMethod]
+        public List<DataTable> crudEncargados(int ID, int IDChildRelations, String DNI, String Nombre,
+            String Direccion, String Telefono, string op)
+        {
+            //Hago un objeto de la clase correspondiente
+            ClsEncargados encargado = new ClsEncargados();
+            encargado.ID = ID;
+            encargado.DNI = DNI;
+            encargado.IDchildRelation = IDChildRelations;
+            encargado.Nombre = Nombre;
+            encargado.Direccion = Direccion;
+            encargado.Telefono = Telefono;
+
+            //Genero un controladro
+            encargadoController encargadoC = new encargadoController(encargado);
+            encargadoC.operacion = op;
+
+            //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
+            String mensajeErr = encargadoC.crud();
+            int nummErr = encargadoC.numError;
+
+            DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
+            DataTable datos = encargadoC.dataTable;
+            datos.TableName = "datos";
+
+            result = new List<DataTable>();
+            result.Add(datos);
+            result.Add(infoTable);
+
+            return result;
+        }
+
+        [WebMethod]
+        public List<DataTable> crudAbonado(int ID, int IDChildRelations,
+         String DNI, String Nombre, String Direccion, String Telefono, String Banco, String CuentaIBAM, string op)
+        {
+            //Hago un objeto de la clase correspondiente
+            ClsAbonados abonado = new ClsAbonados();
+            abonado.ID = ID;
+            abonado.DNI = DNI;
+            abonado.IDchildRelation = IDChildRelations;
+            abonado.Nombre = Nombre;
+            abonado.Direccion = Direccion;
+            abonado.Telefono = Telefono;
+            abonado.Banco = Banco;
+            abonado.CuentaIBAM = CuentaIBAM;
+
+            //Genero un controladro
+            abonadosController abonadoC = new abonadosController(abonado);
+            abonadoC.operacion = op;
+
+            //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
+            String mensajeErr = abonadoC.crud();
+            int nummErr = abonadoC.numError;
+
+            DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
+            DataTable datos = abonadoC.dataTable;
+            datos.TableName = "datos";
+
+            result = new List<DataTable>();
+            result.Add(datos);
+            result.Add(infoTable);
+
+            return result;
+        }
+
+        [WebMethod]
+        public List<DataTable> crudAlergias(int ID, int IDchild, String NombreIngrediente, String op)
+        {
+            //Hago un objeto de la clase correspondiente
+            ClsAlergias alergia = new ClsAlergias();
+            alergia.ID = ID;
+            alergia.NombreIngrediente = NombreIngrediente;
+            alergia.IDchild = IDchild;
+
+            //Genero un controladro
+            alergiasController alergiaC = new alergiasController(alergia);
+            alergiaC.operacion = op;
+
+            //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
+            String mensajeErr = alergiaC.crud();
+            int nummErr = alergiaC.numError;
+
+            DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
+            DataTable datos = alergiaC.dataTable;
+            datos.TableName = "datos";
+
+            result = new List<DataTable>();
+            result.Add(datos);
+            result.Add(infoTable);
+
+            return result;
+        }
+
         private DataTable CreateinfoTable(string mensajeErr, int numErr)
         {
             DataTable infoTable = new DataTable("infoTable");
