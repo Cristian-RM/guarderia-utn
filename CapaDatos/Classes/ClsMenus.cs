@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
@@ -13,6 +7,7 @@ namespace CapaDatos.Classes
         public int ID;
         public String Nombre;
         public decimal Precio;
+
         ///Atributos
         ///
         public ClsMenus()
@@ -23,4 +18,3 @@ namespace CapaDatos.Classes
         }
     }
 }
-

@@ -3,8 +3,6 @@ using CapaDatos.Controlladores;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.Services;
 
 namespace webServicesGuarderia.ModuloComidas
@@ -15,7 +13,7 @@ namespace webServicesGuarderia.ModuloComidas
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
-    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
+    // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente.
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
@@ -49,12 +47,11 @@ namespace webServicesGuarderia.ModuloComidas
         }
 
         [WebMethod]
-        public List<DataTable> crudIngredientes( String nombre, string op)
+        public List<DataTable> crudIngredientes(String nombre, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsIngredientes ingre = new ClsIngredientes();
             ingre.Nombre = nombre;
-
 
             //Genero un controladro
             ingredienteController ingreC = new ingredienteController(ingre);
@@ -75,14 +72,13 @@ namespace webServicesGuarderia.ModuloComidas
         }
 
         [WebMethod]
-        public List<DataTable> crudIngredientePlato(int ID,String nombrePlato, string nombreIngrediente, string op)
+        public List<DataTable> crudIngredientePlato(int ID, String nombrePlato, string nombreIngrediente, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsIngredientePlato ingrePla = new ClsIngredientePlato();
             ingrePla.ID = ID;
             ingrePla.NombrePlato = nombrePlato;
             ingrePla.nombreIngrediente = nombreIngrediente;
-
 
             //Genero un controladro
             ingredientePlatoController ingrePlaC = new ingredientePlatoController(ingrePla);
@@ -109,7 +105,6 @@ namespace webServicesGuarderia.ModuloComidas
             ClasPlato plato = new ClasPlato();
             plato.Nombre = nombre;
 
-
             //Genero un controladro
             platosController platoC = new platosController(plato);
             platoC.operacion = op;
@@ -129,14 +124,13 @@ namespace webServicesGuarderia.ModuloComidas
         }
 
         [WebMethod]
-        public List<DataTable> crudPlatosMenu(int ID,String nombrePlato, int IDmenu, string op)
+        public List<DataTable> crudPlatosMenu(int ID, String nombrePlato, int IDmenu, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsPlatosMenu platomenu = new ClsPlatosMenu();
             platomenu.ID = ID;
             platomenu.NombrePlato = nombrePlato;
             platomenu.IDmenu = IDmenu;
-
 
             //Genero un controladro
             platoMenuController platomenuC = new platoMenuController(platomenu);
@@ -173,4 +167,3 @@ namespace webServicesGuarderia.ModuloComidas
         }
     }
 }
-

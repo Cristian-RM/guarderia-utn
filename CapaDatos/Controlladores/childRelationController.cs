@@ -1,15 +1,11 @@
 ﻿using CapaDatos.Classes;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos.Controlladores
 {
-   public  class childRelationController : ClsConexion
+    public class childRelationController : ClsConexion
     {
         public ClsChildRelations childRela { get; set; }
         public DataTable dataTable { get; set; }
@@ -20,7 +16,7 @@ namespace CapaDatos.Controlladores
 
         public childRelationController(ClsChildRelations childRela)
         {
-            this.childRela= childRela;
+            this.childRela = childRela;
             filasAfectadas = 0;
             dataTable = new DataTable();
         }
@@ -131,4 +127,3 @@ namespace CapaDatos.Controlladores
         }
     }
 }
-

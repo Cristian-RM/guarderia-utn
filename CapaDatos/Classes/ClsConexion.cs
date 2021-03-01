@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
@@ -42,6 +38,7 @@ namespace CapaDatos.Classes
             parametro.Direction = ParameterDirection.Input;
             return parametro;
         }
+
         public SqlParameter Parametro(String campo, decimal value)
         {
             SqlParameter parametro = new SqlParameter(campo, value);
@@ -49,7 +46,6 @@ namespace CapaDatos.Classes
             parametro.Direction = ParameterDirection.Input;
             return parametro;
         }
-
 
         public SqlParameter Parametro(String campo, Double value)
         {

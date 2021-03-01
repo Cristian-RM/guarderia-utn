@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
@@ -16,6 +10,7 @@ namespace CapaDatos.Classes
         public String Nombre { get; set; }
         public String Direccion { get; set; }
         public String Telefono { get; set; }
+
         ///Atributos
         ///
         public ClsEncargados()

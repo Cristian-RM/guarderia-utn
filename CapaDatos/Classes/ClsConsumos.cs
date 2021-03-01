@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos.Classes
 {
@@ -15,6 +9,7 @@ namespace CapaDatos.Classes
         public int Idmenu;
         public String FechaConsumo;
         public int SnCancelado;
+
         ///Atributos
         ///
         public ClsConsumos()
@@ -25,7 +20,5 @@ namespace CapaDatos.Classes
             this.FechaConsumo = "";
             this.SnCancelado = 0;
         }
-
-
     }
 }
