@@ -70,25 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Facturacion\WSFactuModule.asmx" />
-    <Content Include="ModuloChild\WSchildModule.asmx" />
-    <Content Include="ModuloComidas\WScomidasModule.asmx" />
     <Content Include="ServicioGuarderia.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacion\WSFactuModule.asmx.cs">
-      <DependentUpon>WSFactuModule.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ModuloChild\WSchildModule.asmx.cs">
-      <DependentUpon>WSchildModule.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ModuloComidas\WScomidasModule.asmx.cs">
-      <DependentUpon>WScomidasModule.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioGuarderia.asmx.cs">
       <DependentUpon>ServicioGuarderia.asmx</DependentUpon>
