@@ -70,12 +70,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Facturacion\WSFactuModule.asmx" />
     <Content Include="ModuloChild\WSchildModule.asmx" />
+    <Content Include="ModuloComidas\WScomidasModule.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\WSFactuModule.asmx.cs">
+      <DependentUpon>WSFactuModule.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ModuloChild\WSchildModule.asmx.cs">
       <DependentUpon>WSchildModule.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuloComidas\WScomidasModule.asmx.cs">
+      <DependentUpon>WScomidasModule.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,10 +99,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Facturacion\" />
-    <Folder Include="ModuloComidas\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
