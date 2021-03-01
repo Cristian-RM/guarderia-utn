@@ -54,7 +54,7 @@ namespace CapaDatos.Controlladores
                 coneccion.Parameters.Add(Parametro("@aMES", this.asis.Mes));
                 coneccion.Parameters.Add(Parametro("@aHoraEntrada", this.asis.HoraEntrada));
                 coneccion.Parameters.Add(Parametro("@aHoraSalida", this.asis.HoraSalida));
-                coneccion.Parameters.Add(Parametro("@@aDetalles", this.asis.Detalles));
+                coneccion.Parameters.Add(Parametro("@aDetalles", this.asis.Detalles));
                 coneccion.Parameters.Add(Parametro("@aSNCANCELADO", this.asis.SNCANCELADO));
 
                 coneccion.Parameters.Add(Parametro("@pOperacion", this.operacion));

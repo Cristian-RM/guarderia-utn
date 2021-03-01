@@ -50,7 +50,7 @@ namespace CapaDatos.Controlladores
 
                 coneccion.Parameters.Add(Parametro("@aID", this.menu.ID));
                 coneccion.Parameters.Add(Parametro("@aNombre", this.menu.Nombre));
-                coneccion.Parameters.Add(Parametro("@aNombre", this.menu.Precio));
+                coneccion.Parameters.Add(Parametro("@aPrecio", this.menu.Precio));
 
                 coneccion.Parameters.Add(Parametro("@pOperacion", this.operacion));
 
