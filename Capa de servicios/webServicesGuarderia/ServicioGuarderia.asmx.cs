@@ -168,7 +168,7 @@ namespace webServicesGuarderia
         }
 
         [WebMethod]
-        public List<DataTable> crudChild(int IDmatricula, String nombre, String FechaRegistro, String FechaNacimiento, string op)
+        public DataTable crudChild(int IDmatricula, String nombre, String FechaRegistro, String FechaNacimiento, string op)
         {
             //Hago un objeto de la clase correspondiente
             ClsChilds child = new ClsChilds();
@@ -185,14 +185,18 @@ namespace webServicesGuarderia
             String mensajeErr = childC.crud();
             int nummErr = childC.numError;
 
-            DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
-            DataTable datos = childC.dataTable;
-            datos.TableName = "datos";
-            result = new List<DataTable>();
-            result.Add(datos);
-            result.Add(infoTable);
+            DataTable datos = new DataTable();
+            if (childC.isconsulta(op))
+            {
+                datos = childC.dataTable;
+                datos.TableName = "datos";
+            }
+            else
+            {
+                datos = CreateinfoTable(mensajeErr, nummErr);
+            }
 
-            return result;
+            return datos;
         }
 
         [WebMethod]
@@ -457,7 +461,7 @@ namespace webServicesGuarderia
 
             DataRow row = infoTable.NewRow();
             row["mensajeDeError"] = mensajeErr;
-            row["numeroDeError"] = numErr;
+            row["numeroDeError"] = Convert.ToString(numErr);
             infoTable.Rows.Add(row);
 
             return infoTable;

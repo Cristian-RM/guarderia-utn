@@ -61,16 +61,15 @@ namespace CapaDatos.Controlladores
                     //////Consultar datos
                     adapter = new SqlDataAdapter(coneccion);
                     adapter.Fill(dataTable);
-                    if (operacion == this.gets)
-                    {
-                        construirObjeto(dataTable);
-                    }
                 }
                 else
                 {
                     filasAfectadas = coneccion.ExecuteNonQuery();
                 }
-
+                if (operacion == this.gets)
+                {
+                    construirObjeto(dataTable);
+                }
                 conectado.Close();
 
                 this.numError = (int)numError.Value;

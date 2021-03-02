@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crudmfactura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDAbonado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudmfacturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudmfacturaResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDataTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataTable" nillable="true">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crudDetalleAsistencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDFactura" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDAsistencia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaCreacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudDetalleAsistenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudDetalleAsistenciaResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAsistencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idChild" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaRegistro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="horaEntrada" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="horaSalida" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalles" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cancelado" type="s:unsignedByte" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAsistenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudAsistenciaResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudDetalleConsumos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDcosumo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDfactura" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaCreacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudDetalleConsumosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudDetalleConsumosResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudConsumos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDChild" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDMenu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaConsumo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudConsumosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudConsumosResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudChild">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDmatricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaRegistro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudChildResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudChildResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudChildRelations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDChild" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoRelacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudChildRelationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudChildRelationsResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudEncargados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDChildRelations" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DNI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudEncargadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudEncargadosResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAbonado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDChildRelations" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DNI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Banco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CuentaIBAM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAbonadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudAbonadoResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAlergias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDchild" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreIngrediente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudAlergiasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudAlergiasResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudMenusResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudIngredientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudIngredientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudIngredientesResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudIngredientePlato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombrePlato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreIngrediente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudIngredientePlatoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudIngredientePlatoResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudPlatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudPlatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudPlatosResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudPlatosMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombrePlato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDmenu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="op" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="crudPlatosMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crudPlatosMenuResult" type="tns:ArrayOfDataTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crudmfacturaSoapIn">
+    <wsdl:part name="parameters" element="tns:crudmfactura" />
+  </wsdl:message>
+  <wsdl:message name="crudmfacturaSoapOut">
+    <wsdl:part name="parameters" element="tns:crudmfacturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudDetalleAsistenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:crudDetalleAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="crudDetalleAsistenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:crudDetalleAsistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudAsistenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:crudAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="crudAsistenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:crudAsistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudDetalleConsumosSoapIn">
+    <wsdl:part name="parameters" element="tns:crudDetalleConsumos" />
+  </wsdl:message>
+  <wsdl:message name="crudDetalleConsumosSoapOut">
+    <wsdl:part name="parameters" element="tns:crudDetalleConsumosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudConsumosSoapIn">
+    <wsdl:part name="parameters" element="tns:crudConsumos" />
+  </wsdl:message>
+  <wsdl:message name="crudConsumosSoapOut">
+    <wsdl:part name="parameters" element="tns:crudConsumosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudChildSoapIn">
+    <wsdl:part name="parameters" element="tns:crudChild" />
+  </wsdl:message>
+  <wsdl:message name="crudChildSoapOut">
+    <wsdl:part name="parameters" element="tns:crudChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudChildRelationsSoapIn">
+    <wsdl:part name="parameters" element="tns:crudChildRelations" />
+  </wsdl:message>
+  <wsdl:message name="crudChildRelationsSoapOut">
+    <wsdl:part name="parameters" element="tns:crudChildRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudEncargadosSoapIn">
+    <wsdl:part name="parameters" element="tns:crudEncargados" />
+  </wsdl:message>
+  <wsdl:message name="crudEncargadosSoapOut">
+    <wsdl:part name="parameters" element="tns:crudEncargadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudAbonadoSoapIn">
+    <wsdl:part name="parameters" element="tns:crudAbonado" />
+  </wsdl:message>
+  <wsdl:message name="crudAbonadoSoapOut">
+    <wsdl:part name="parameters" element="tns:crudAbonadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudAlergiasSoapIn">
+    <wsdl:part name="parameters" element="tns:crudAlergias" />
+  </wsdl:message>
+  <wsdl:message name="crudAlergiasSoapOut">
+    <wsdl:part name="parameters" element="tns:crudAlergiasResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudMenusSoapIn">
+    <wsdl:part name="parameters" element="tns:crudMenus" />
+  </wsdl:message>
+  <wsdl:message name="crudMenusSoapOut">
+    <wsdl:part name="parameters" element="tns:crudMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudIngredientesSoapIn">
+    <wsdl:part name="parameters" element="tns:crudIngredientes" />
+  </wsdl:message>
+  <wsdl:message name="crudIngredientesSoapOut">
+    <wsdl:part name="parameters" element="tns:crudIngredientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudIngredientePlatoSoapIn">
+    <wsdl:part name="parameters" element="tns:crudIngredientePlato" />
+  </wsdl:message>
+  <wsdl:message name="crudIngredientePlatoSoapOut">
+    <wsdl:part name="parameters" element="tns:crudIngredientePlatoResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudPlatosSoapIn">
+    <wsdl:part name="parameters" element="tns:crudPlatos" />
+  </wsdl:message>
+  <wsdl:message name="crudPlatosSoapOut">
+    <wsdl:part name="parameters" element="tns:crudPlatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="crudPlatosMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:crudPlatosMenu" />
+  </wsdl:message>
+  <wsdl:message name="crudPlatosMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:crudPlatosMenuResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioGuarderiaSoap">
+    <wsdl:operation name="crudmfactura">
+      <wsdl:input message="tns:crudmfacturaSoapIn" />
+      <wsdl:output message="tns:crudmfacturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleAsistencia">
+      <wsdl:input message="tns:crudDetalleAsistenciaSoapIn" />
+      <wsdl:output message="tns:crudDetalleAsistenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudAsistencia">
+      <wsdl:input message="tns:crudAsistenciaSoapIn" />
+      <wsdl:output message="tns:crudAsistenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleConsumos">
+      <wsdl:input message="tns:crudDetalleConsumosSoapIn" />
+      <wsdl:output message="tns:crudDetalleConsumosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudConsumos">
+      <wsdl:input message="tns:crudConsumosSoapIn" />
+      <wsdl:output message="tns:crudConsumosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudChild">
+      <wsdl:input message="tns:crudChildSoapIn" />
+      <wsdl:output message="tns:crudChildSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudChildRelations">
+      <wsdl:input message="tns:crudChildRelationsSoapIn" />
+      <wsdl:output message="tns:crudChildRelationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudEncargados">
+      <wsdl:input message="tns:crudEncargadosSoapIn" />
+      <wsdl:output message="tns:crudEncargadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudAbonado">
+      <wsdl:input message="tns:crudAbonadoSoapIn" />
+      <wsdl:output message="tns:crudAbonadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudAlergias">
+      <wsdl:input message="tns:crudAlergiasSoapIn" />
+      <wsdl:output message="tns:crudAlergiasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudMenus">
+      <wsdl:input message="tns:crudMenusSoapIn" />
+      <wsdl:output message="tns:crudMenusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientes">
+      <wsdl:input message="tns:crudIngredientesSoapIn" />
+      <wsdl:output message="tns:crudIngredientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientePlato">
+      <wsdl:input message="tns:crudIngredientePlatoSoapIn" />
+      <wsdl:output message="tns:crudIngredientePlatoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatos">
+      <wsdl:input message="tns:crudPlatosSoapIn" />
+      <wsdl:output message="tns:crudPlatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatosMenu">
+      <wsdl:input message="tns:crudPlatosMenuSoapIn" />
+      <wsdl:output message="tns:crudPlatosMenuSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioGuarderiaSoap" type="tns:ServicioGuarderiaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crudmfactura">
+      <soap:operation soapAction="http://tempuri.org/crudmfactura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleAsistencia">
+      <soap:operation soapAction="http://tempuri.org/crudDetalleAsistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAsistencia">
+      <soap:operation soapAction="http://tempuri.org/crudAsistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleConsumos">
+      <soap:operation soapAction="http://tempuri.org/crudDetalleConsumos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudConsumos">
+      <soap:operation soapAction="http://tempuri.org/crudConsumos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudChild">
+      <soap:operation soapAction="http://tempuri.org/crudChild" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudChildRelations">
+      <soap:operation soapAction="http://tempuri.org/crudChildRelations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudEncargados">
+      <soap:operation soapAction="http://tempuri.org/crudEncargados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAbonado">
+      <soap:operation soapAction="http://tempuri.org/crudAbonado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAlergias">
+      <soap:operation soapAction="http://tempuri.org/crudAlergias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudMenus">
+      <soap:operation soapAction="http://tempuri.org/crudMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientes">
+      <soap:operation soapAction="http://tempuri.org/crudIngredientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientePlato">
+      <soap:operation soapAction="http://tempuri.org/crudIngredientePlato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatos">
+      <soap:operation soapAction="http://tempuri.org/crudPlatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatosMenu">
+      <soap:operation soapAction="http://tempuri.org/crudPlatosMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioGuarderiaSoap12" type="tns:ServicioGuarderiaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crudmfactura">
+      <soap12:operation soapAction="http://tempuri.org/crudmfactura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleAsistencia">
+      <soap12:operation soapAction="http://tempuri.org/crudDetalleAsistencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAsistencia">
+      <soap12:operation soapAction="http://tempuri.org/crudAsistencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudDetalleConsumos">
+      <soap12:operation soapAction="http://tempuri.org/crudDetalleConsumos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudConsumos">
+      <soap12:operation soapAction="http://tempuri.org/crudConsumos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudChild">
+      <soap12:operation soapAction="http://tempuri.org/crudChild" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudChildRelations">
+      <soap12:operation soapAction="http://tempuri.org/crudChildRelations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudEncargados">
+      <soap12:operation soapAction="http://tempuri.org/crudEncargados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAbonado">
+      <soap12:operation soapAction="http://tempuri.org/crudAbonado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudAlergias">
+      <soap12:operation soapAction="http://tempuri.org/crudAlergias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudMenus">
+      <soap12:operation soapAction="http://tempuri.org/crudMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientes">
+      <soap12:operation soapAction="http://tempuri.org/crudIngredientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudIngredientePlato">
+      <soap12:operation soapAction="http://tempuri.org/crudIngredientePlato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatos">
+      <soap12:operation soapAction="http://tempuri.org/crudPlatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crudPlatosMenu">
+      <soap12:operation soapAction="http://tempuri.org/crudPlatosMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioGuarderia">
+    <wsdl:port name="ServicioGuarderiaSoap" binding="tns:ServicioGuarderiaSoap">
+      <soap:address location="http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioGuarderiaSoap12" binding="tns:ServicioGuarderiaSoap12">
+      <soap12:address location="http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

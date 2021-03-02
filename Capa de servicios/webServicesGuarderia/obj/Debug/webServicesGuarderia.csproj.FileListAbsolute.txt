@@ -115,6 +115,7 @@ D:\Guardería\Capa de servicios\webServicesGuarderia\bin\CapaDatos.dll
 D:\Guardería\Capa de servicios\webServicesGuarderia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Guardería\Capa de servicios\webServicesGuarderia\bin\CapaDatos.pdb
 D:\Guardería\Capa de servicios\webServicesGuarderia\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Guardería\Capa de servicios\webServicesGuarderia\obj\Debug\webServicesGuarderia.csprojAssemblyReference.cache
 D:\Guardería\Capa de servicios\webServicesGuarderia\obj\Debug\webServicesGuarderia.csproj.CoreCompileInputs.cache
 D:\Guardería\Capa de servicios\webServicesGuarderia\obj\Debug\webServicesGuarderia.csproj.CopyComplete
 D:\Guardería\Capa de servicios\webServicesGuarderia\obj\Debug\webServicesGuarderia.dll
