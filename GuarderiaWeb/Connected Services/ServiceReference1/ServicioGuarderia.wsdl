@@ -723,10 +723,10 @@
   </wsdl:binding>
   <wsdl:service name="ServicioGuarderia">
     <wsdl:port name="ServicioGuarderiaSoap" binding="tns:ServicioGuarderiaSoap">
-      <soap:address location="http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx" />
+      <soap:address location="http://cristianrm-001-site1.itempurl.com/Servicio/ServicioGuarderia.asmx" />
     </wsdl:port>
     <wsdl:port name="ServicioGuarderiaSoap12" binding="tns:ServicioGuarderiaSoap12">
-      <soap12:address location="http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx" />
+      <soap12:address location="http://cristianrm-001-site1.itempurl.com/Servicio/ServicioGuarderia.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

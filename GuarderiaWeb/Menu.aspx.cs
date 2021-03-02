@@ -20,7 +20,6 @@ namespace GuarderiaWeb
             else
             {
             }
-            cargarTabla();
         }
 
         public void informar(String m)
@@ -62,12 +61,16 @@ namespace GuarderiaWeb
             {
                 Session["op"] = "u";
 
-                txtNombre.Text = row.Cells[1].Text;
-                txtNombre.ReadOnly = true;
-                //btnSempleadoAgregar.Visible = true;
+                txtID.Text = row.Cells[1].Text;
+                txtID.ReadOnly = true;
+                txtNombre.Text = row.Cells[2].Text;
+                txtPrecio.Text = row.Cells[3].Text;
                 btnEliminar.Visible = true;
                 tbl.SelectedIndex = -1;
                 alertModal.Visible = false;
+
+                Session["menu"] = txtID.Text;
+                Session["menuNombre"] = txtNombre.Text;
 
                 encerderModal(1);
             }
@@ -82,6 +85,8 @@ namespace GuarderiaWeb
             Session["op"] = "i";
 
             txtID.Text = "";
+            txtPrecio.Text = "";
+
             txtID.ReadOnly = true;
             txtNombre.Text = "";
 
@@ -129,7 +134,7 @@ namespace GuarderiaWeb
         {
             GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
             DataTable result = Ws.crudMenus(parse(txtID.Text), txtNombre.Text, parseDecimal(txtPrecio.Text), op)[0];
-
+            Ws.Close();
             return result;
         }
 
@@ -202,6 +207,7 @@ namespace GuarderiaWeb
 
         protected void btnSempleadoAgregar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("PlatosDEmenu.aspx");
         }
     }
 }

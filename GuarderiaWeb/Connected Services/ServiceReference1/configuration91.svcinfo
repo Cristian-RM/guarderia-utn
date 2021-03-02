@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="whWFdFwqekpTew4nvr4ARV6muJnligaOx6cQz8bjAVQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="cBXumJgDxQ5VYOcPRL1YSMLqX5SgSxruFRiIEFnAalE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServicioGuarderiaSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServicioGuarderiaSoap" contract="ServiceReference1.ServicioGuarderiaSoap" bindingType="basicHttpBinding" address="http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx" bindingConfiguration="ServicioGuarderiaSoap">
+    <endpoint name="ServicioGuarderiaSoap" contract="ServiceReference1.ServicioGuarderiaSoap" bindingType="basicHttpBinding" address="http://cristianrm-001-site1.itempurl.com/Servicio/ServicioGuarderia.asmx" bindingConfiguration="ServicioGuarderiaSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://cristianrm-001-site1.itempurl.com/ServicioGuarderia.asmx</serializedValue>
+          <serializedValue>http://cristianrm-001-site1.itempurl.com/Servicio/ServicioGuarderia.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

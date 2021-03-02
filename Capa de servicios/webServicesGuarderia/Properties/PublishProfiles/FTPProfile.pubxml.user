@@ -11,10 +11,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/CapaDatos.dll">
-      <publishTime>03/01/2021 16:13:03</publishTime>
+      <publishTime>03/02/2021 00:51:14</publishTime>
     </File>
     <File Include="bin/CapaDatos.pdb">
-      <publishTime>03/01/2021 16:13:03</publishTime>
+      <publishTime>03/02/2021 00:51:14</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
@@ -167,10 +167,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
     <File Include="bin/webServicesGuarderia.dll">
-      <publishTime>03/01/2021 16:14:29</publishTime>
+      <publishTime>03/02/2021 02:34:55</publishTime>
     </File>
     <File Include="bin/webServicesGuarderia.pdb">
-      <publishTime>03/01/2021 16:14:29</publishTime>
+      <publishTime>03/02/2021 02:34:55</publishTime>
     </File>
     <File Include="ServicioGuarderia.asmx">
       <publishTime>03/01/2021 12:10:24</publishTime>
