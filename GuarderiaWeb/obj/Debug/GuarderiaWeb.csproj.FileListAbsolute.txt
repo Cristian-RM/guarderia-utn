@@ -1,4 +1,3 @@
-D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csproj.CoreCompileInputs.cache
 D:\Guardería\GuarderiaWeb\bin\GuarderiaWeb.dll.config
 D:\Guardería\GuarderiaWeb\bin\GuarderiaWeb.dll
 D:\Guardería\GuarderiaWeb\bin\GuarderiaWeb.pdb
@@ -51,6 +50,7 @@ D:\Guardería\GuarderiaWeb\bin\Antlr3.Runtime.pdb
 D:\Guardería\GuarderiaWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\Guardería\GuarderiaWeb\bin\es\System.Web.Optimization.resources.dll
 D:\Guardería\GuarderiaWeb\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csproj.CoreCompileInputs.cache
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csproj.CopyComplete
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.dll
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.pdb

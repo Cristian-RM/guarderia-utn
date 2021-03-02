@@ -14,6 +14,7 @@ namespace GuarderiaWeb
         {
             if (!IsPostBack)
             {
+                Session["IDchild"] = "";
                 Session["op"] = "";
                 cargarTabla();
             }
@@ -77,9 +78,9 @@ namespace GuarderiaWeb
 
         protected void tblEmpresas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = tbl.Rows[tbl.SelectedIndex];
             try
             {
+                GridViewRow row = tbl.Rows[tbl.SelectedIndex];
                 Session["op"] = "u";
 
                 txtIDmatricula.Text = row.Cells[1].Text;
@@ -87,7 +88,7 @@ namespace GuarderiaWeb
                 txtFechaRegistro.Text = row.Cells[3].Text;
                 txtFechaNacimiento.Text = row.Cells[4].Text;
                 txtFechaRegistro.ReadOnly = true;
-
+                Session["IDchild"] = row.Cells[1].Text;
                 //btnSempleadoAgregar.Visible = true;
                 btnEliminar.Visible = true;
                 tbl.SelectedIndex = -1;
@@ -229,7 +230,7 @@ namespace GuarderiaWeb
 
         protected void btnSempleadoAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Contrataciones.aspx");
+            Response.Redirect("Familiares.aspx");
         }
     }
 }

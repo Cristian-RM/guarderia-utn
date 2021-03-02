@@ -105,6 +105,7 @@
                                 <div class="col-12 d-flex mt-3 justify-content-center ">
                                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="form-control btn-primary mr-3" OnClick="btnGuardar_Click" />
                                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="form-control btn-primary mr-3" OnClick="btnEliminar_Click" />
+                                    <asp:Button ID="btnSempleadoAgregar" runat="server" Text="Administrar Ingredientes" CssClass="btn btn-primary" OnClick="btnSempleadoAgregar_Click" /><%--   Nombre del botom--%>
                                 </div>
                             </div>
                         </div>

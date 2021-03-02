@@ -11,17 +11,17 @@ namespace GuarderiaWeb
 {
 
 
-    public partial class Ingredientes_de_plato
+    public partial class Familiares
     {
 
         /// <summary>
-        /// Control lblPlato.
+        /// Control lblNino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPlato;
+        protected global::System.Web.UI.WebControls.Label lblNino;
 
         /// <summary>
         /// Control btnCrear.
@@ -96,40 +96,40 @@ namespace GuarderiaWeb
         protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
-        /// Control lblNombrePlato.
+        /// Control lblIDCHILD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombrePlato;
+        protected global::System.Web.UI.WebControls.Label lblIDCHILD;
 
         /// <summary>
-        /// Control txtNombrePlato.
+        /// Control txtMatricula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombrePlato;
+        protected global::System.Web.UI.WebControls.TextBox txtMatricula;
 
         /// <summary>
-        /// Control lblNombreIngrediente.
+        /// Control lblTipoRELACINO.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreIngrediente;
+        protected global::System.Web.UI.WebControls.Label lblTipoRELACINO;
 
         /// <summary>
-        /// Control txtNombreIngrediente.
+        /// Control txtTipoRelacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtNombreIngrediente;
+        protected global::System.Web.UI.WebControls.TextBox txtTipoRelacion;
 
         /// <summary>
         /// Control alertModal.

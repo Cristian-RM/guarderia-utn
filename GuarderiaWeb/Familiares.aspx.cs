@@ -8,19 +8,16 @@ using System.Web.UI.WebControls;
 
 namespace GuarderiaWeb
 {
-    public partial class Ingredientes_de_plato : System.Web.UI.Page
+    public partial class Familiares : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                Session["IDrelacion"] = "";
                 Session["op"] = "";
+                validarSessino();
                 cargarTabla();
-                lblPlato.Text = validarSessino();
-                txtNombrePlato.Text = validarSessino();
-                cargarIngredientes();
-                txtID.ReadOnly = true;
-                txtNombrePlato.ReadOnly = true;
             }
             else
             {
@@ -28,20 +25,29 @@ namespace GuarderiaWeb
             cargarTabla();
         }
 
-        private String validarSessino()
+        private string validarSessino()
         {
             try
             {
-                String plato = (String)Session["plato"];
-                if (plato.Length == 0)
+                int idchild = Convert.ToInt32((string)Session["IDchild"]);
+                String IDchild = (String)Session["IDchild"];
+
+                GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
+                DataTable result = Ws.crudChild(idchild, "", "", "", "g");
+
+                lblNino.Text = result.Rows[0].Field<string>("Nombre");
+
+                txtMatricula.Text = IDchild;
+                txtMatricula.ReadOnly = true;
+                if (IDchild.Length == 0)
                 {
-                    Response.Redirect("Plato.aspx"); return "";
+                    Response.Redirect("Child.aspx"); return "";
                 }
-                return plato;
+                return IDchild;
             }
             catch (Exception)
             {
-                Response.Redirect("Plato.aspx");
+                Response.Redirect("Child.aspx");
                 return "";
             }
         }
@@ -61,33 +67,14 @@ namespace GuarderiaWeb
             informacion.DataBind();
         }
 
-        public void cargarIngredientes()
-        {
-            string m = "";
-            try
-            {
-                GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
-                DataTable result = Ws.crudIngredientes("", "l")[0];
-                txtNombreIngrediente.DataSource = result;
-                txtNombreIngrediente.DataTextField = "Nombre";
-                txtNombreIngrediente.DataValueField = "Nombre";
-                txtNombreIngrediente.DataBind();
-            }
-            catch (Exception es)
-            {
-                m = es.Message;
-                informar(m);
-            }
-        }
-
         public void cargarTabla()
         {
             string m = "";
             try
             {
-                DataTable[] r = sqlExecute("lb");
+                DataTable r = sqlExecute("lb");
 
-                tbl.DataSource = r[0];
+                tbl.DataSource = r;
                 tbl.DataBind();
             }
             catch (Exception es)
@@ -99,34 +86,33 @@ namespace GuarderiaWeb
 
         protected void tblEmpresas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GridViewRow row = tbl.Rows[tbl.SelectedIndex];
             try
             {
-                Session["op"] = "u";
-                ListItem item = txtNombreIngrediente.Items.FindByValue(row.Cells[3].Text);
-                txtNombreIngrediente.SelectedIndex = txtNombreIngrediente.Items.IndexOf(item);
-                txtNombreIngrediente.Enabled = false;
-
+                GridViewRow row = tbl.Rows[tbl.SelectedIndex];
                 alertModal.Visible = false;
-                //txtNombre.Text = row.Cells[1].Text;
-                //txtNombre.ReadOnly = true;
-                //btnEliminar.Visible = true;
-                //tbl.SelectedIndex = -1;
-                //alertModal.Visible = false;
+                Session["op"] = "u";
+                txtID.Text = row.Cells[1].Text;
+                txtTipoRelacion.Text = row.Cells[4].Text;
 
+                Session["IDrelacion"] = txtID.Text;
+                txtTipoRelacion.ReadOnly = false;
                 encerderModal(1);
             }
             catch (Exception)
             {
-                throw;
             }
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Session["op"] = "i";
+            txtID.Text = "";
+            txtTipoRelacion.Text = "";
+
             alertModal.Visible = false;
-            txtNombreIngrediente.Enabled = true;
+            btnEliminar.Visible = false;
+            btnSempleadoAgregar.Visible = false;
+
             encerderModal(1);
         }
 
@@ -144,33 +130,30 @@ namespace GuarderiaWeb
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            String m = "";
             try
             {
                 sqlExecute();
-
+                tbl.SelectedIndex = -1;
                 btnEliminar.Visible = true;
                 cargarTabla();
             }
-            catch (Exception ed)
+            catch (Exception)
             {
                 encerderModal(1);
-                m = m + "  " + ed.Message;
             }
-            informar(m);
         }
 
-        private DataTable[] sqlExecute()
+        private DataTable sqlExecute()
         {
             String op = (string)Session["op"];
-
+            informar(op);
             return sqlExecute(op);
         }
 
-        private DataTable[] sqlExecute(string op)
+        private DataTable sqlExecute(string op)
         {
             GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
-            DataTable[] result = Ws.crudIngredientePlato(parse(txtID.Text), txtNombrePlato.Text, txtNombreIngrediente.Text, op);
+            DataTable result = Ws.crudChildRelations(parse(txtID.Text), parse(txtMatricula.Text), txtTipoRelacion.Text, op)[0];
 
             return result;
         }
@@ -179,9 +162,9 @@ namespace GuarderiaWeb
         {
             try
             {
-                DataRow r = infotable.Rows[infotable.Rows.Count - 1];
-
-                return Convert.ToInt32(r.Field<int>("numeroDeError"));
+                //DataRow r = infotable.Rows[infotable.Rows.Count - 1];
+                informar(infotable.TableName);
+                //return Convert.ToInt32(r.Field<int>("numeroDeError"));
             }
             catch (Exception i)
             {
