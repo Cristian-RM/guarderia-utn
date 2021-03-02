@@ -106,7 +106,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Abonados.aspx" />
     <Content Include="About.aspx" />
+    <Content Include="Alergias.aspx" />
+    <Content Include="Asistencias.aspx" />
     <Content Include="Child.aspx" />
     <Content Include="Connected Services\ServiceReference1\GuarderiaWeb.ServiceReference1.crudAbonadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -166,6 +169,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Encargados.aspx" />
+    <Content Include="Facturacion.aspx" />
     <Content Include="Familiares.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -313,6 +318,20 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonados.aspx.cs">
+      <DependentUpon>Abonados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Abonados.aspx.designer.cs">
+      <DependentUpon>Abonados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alergias.aspx.cs">
+      <DependentUpon>Alergias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alergias.aspx.designer.cs">
+      <DependentUpon>Alergias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -322,6 +341,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Asistencias.aspx.cs">
+      <DependentUpon>Asistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Asistencias.aspx.designer.cs">
+      <DependentUpon>Asistencias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Child.aspx.cs">
       <DependentUpon>Child.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,6 +373,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Encargados.aspx.cs">
+      <DependentUpon>Encargados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Encargados.aspx.designer.cs">
+      <DependentUpon>Encargados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion.aspx.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturacion.aspx.designer.cs">
+      <DependentUpon>Facturacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Familiares.aspx.cs">
       <DependentUpon>Familiares.aspx</DependentUpon>

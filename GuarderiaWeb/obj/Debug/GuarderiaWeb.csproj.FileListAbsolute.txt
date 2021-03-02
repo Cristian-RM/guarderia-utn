@@ -54,3 +54,4 @@ D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csproj.CoreCompileInputs.cache
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csproj.CopyComplete
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.dll
 D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.pdb
+D:\Guardería\GuarderiaWeb\obj\Debug\GuarderiaWeb.csprojAssemblyReference.cache

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace GuarderiaWeb
 {
-    public partial class Child : System.Web.UI.Page
+    public partial class Asistencias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -201,15 +200,28 @@ namespace GuarderiaWeb
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                sqlExecute("d");
-                cargarTabla();
-            }
-            catch (Exception)
-            {
-                cargarTabla();
-            }
+            //clsPersona persona = new clsPersona();
+            //persona.CODCIA = lstCODCIA.SelectedValue;
+
+            //persona.COPERSONA = txtCopersona.Text;
+            //string m = "";
+
+            //int exito = sqlExecute(persona, "d");
+            //clsPersonaController personaC = new clsPersonaController();
+            //personaC.crud(personaC.delete, persona);
+            //if (exito == 1)
+            //{
+            //    txtCopersona.Enabled = true;
+            //    btnEliminar.Visible = true;
+            //    lstCODCIA.Enabled = true;
+            //    m = personaC.mensajeError;
+            //    informar(m);
+            //    cargarTabla();
+            //}
+            //else
+            //{
+            //    encerderModal(1);
+            //}
         }
 
         protected void btnSempleadoAgregar_Click(object sender, EventArgs e)

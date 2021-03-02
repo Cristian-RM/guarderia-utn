@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Familiares.aspx.cs" Inherits="GuarderiaWeb.Familiares" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Asistencias.aspx.cs" Inherits="GuarderiaWeb.Asistencias" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row ">
         <div class="col-12 text-left">
             <div class="col-form-label  pl-3 text-capitalize">
                 <%--  Cambiar el nombre del objeto--%>
-                <label runat="server">Administrar Familia de</label>
-                <asp:Label ID="lblNino" runat="server" Text="Label"></asp:Label>
+                <label runat="server">Administrar Niños</label>
                 <%--Nombre de la pagina--%>
             </div>
         </div>
@@ -16,7 +14,7 @@
     <div class="row mb-3 ">
         <div class="col-12 " style="left: 0px; top: 0px">
             <div class="col-form-label">
-                <h4>Lista de Relaciones</h4>
+                <h4>Lista de Bebes</h4>
                 <%-- Listar objetos--%>
             </div>
         </div>
@@ -54,7 +52,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <%--CAMBIAR NOMBRE mODAL--%>
-                        <h5 class="modal-title" id="staticBackdropLabel">Adminsitrar Relacion Familiar</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Adminsitrar Niño</h5>
                         <%-- Titulo del modal--%>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -68,28 +66,38 @@
                                     <asp:Label ID="lblTitleModal" runat="server" Text="" CssClass="h3"></asp:Label>
                                     <%--campos--%>
                                 </div>
-
-                                <%--  NOMBRE DE LA id--%>
+                                <%--IdMatricula--%>
+                                <div class="col-12 d-flex mb-2">
+                                    <asp:Label ID="lblIDmatricula" runat="server" Text="Num Matricula" CssClass="" ToolTip="Codigo de la empresa" Width="100px"></asp:Label>
+                                    <asp:TextBox ID="txtIDmatricula" runat="server" ReadOnly="True" CssClass="form-control ml-4"></asp:TextBox>
+                                </div>
+                                <%--  NOMBRE DE LA PERSONA--%>
                                 <div class="col-12 d-flex flex-column mt-3">
                                     <div class="d-flex">
-                                        <asp:Label ID="lblID" runat="server" Text="ID" CssClass="" ToolTip="" Width="100px"></asp:Label>
-                                        <asp:TextBox ID="txtID" runat="server" ReadOnly="true" CssClass="form-control ml-4"></asp:TextBox>
+                                        <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="" ToolTip="Nombre completo de la persona" Width="100px"></asp:Label>
+                                        <asp:TextBox ID="txtNombre" runat="server" ReadOnly="false" CssClass="form-control ml-4"></asp:TextBox>
                                     </div>
                                 </div>
-
-                                <div class="col-12 d-flex flex-column mt-3">
+                                <%--COPERSONA--%>
+                                <div class="col-12 d-flex flex-column   mt-3">
                                     <div class="d-flex">
-                                        <asp:Label ID="lblIDCHILD" runat="server" Text="ID de la matricula MATRICULA" CssClass="" ToolTip="Nombre completo de la persona" Width="100px"></asp:Label>
-                                        <asp:TextBox ID="txtMatricula" runat="server" ReadOnly="true" CssClass="form-control ml-4"></asp:TextBox>
+                                        <asp:Label ID="lblFechaRegistro" runat="server" Text="Fecha de registro" CssClass="" ToolTip="Cedula de la persona" Width="100px"></asp:Label>
+                                        <asp:TextBox ID="txtFechaRegistro" runat="server" ReadOnly="false" CssClass="form-control ml-4"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="col-12 d-flex flex-column mt-3">
+                                <div class="col-12 d-flex flex-column   mt-3">
                                     <div class="d-flex">
-                                        <asp:Label ID="lblTipoRELACINO" runat="server" Text="Tipo de relación" CssClass="" ToolTip="Nombre completo de la persona" Width="100px"></asp:Label>
-                                        <asp:TextBox ID="txtTipoRelacion" runat="server" ReadOnly="false" CssClass="form-control ml-4"></asp:TextBox>
+                                        <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento" CssClass="" ToolTip="Cedula de la persona" Width="100px"></asp:Label>
+                                        <asp:TextBox ID="txtFechaNacimiento" runat="server" ReadOnly="false" CssClass="form-control ml-4"></asp:TextBox>
                                     </div>
                                 </div>
-
+                                <%-- <%--ACTIVO--%>
+                                <%--<div class="col-6 d-flex flex-column justify-content-center align-items-center mt-3">
+                                    <div class="d-flex">
+                                        <asp:Label ID="lblSNACTIVO" runat="server" Text="Activo" CssClass="mr-3" ToolTip="Esta activo o inacitov como persona."></asp:Label>
+                                        <asp:CheckBox ID="chckActivo" runat="server" CssClass="ml-4" />
+                                    </div>
+                                </div>--%>
                                 <%-- EMPLEADO O NO EMPLEADO--%>
 
                                 <div class="col-12 d-flex flex-column justify-content-center align-items-center  mt-3">
@@ -108,8 +116,8 @@
                                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="form-control btn-primary mr-3" OnClick="btnEliminar_Click" />
                                 </div>
                                 <div class="col-12 d-flex mt-3 justify-content-center ">
-                                    <asp:Button ID="btnSempleadoAgregar" runat="server" Text="Añadir Persona en este Grupo" CssClass="form-control mr-3 btn btn-outline-success" OnClick="btnSempleadoAgregar_Click" /><%--   Nombre del botom--%>
-                                    <asp:Button ID="BTNABONADO" runat="server" Text="Agregar Como abonado" CssClass="form-control mr-3 btn btn-outline-info" OnClick="BTNABONADO_Click" /><%--   Nombre del botom--%>
+                                    <asp:Button ID="btnSempleadoAgregar" runat="server" Text="Grupos Familiares" CssClass="form-control mr-3 btn btn-outline-success" OnClick="btnSempleadoAgregar_Click" /><%--   Nombre del botom--%>
+                                    <asp:Button ID="BTNABONADO" runat="server" Text="Alergias" CssClass="form-control mr-3 btn btn-outline-info" OnClick="BTNABONADO_Click" />
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,237 @@
+[33mcommit 92be98de0e3d9b0444cef167c9ab57c9dc4996d5[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 8ce5e31 6fa4f03
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 23:08:03 2021 -0600
+
+    Me traje lo de jose, que se alo que dios quiera
+
+[33mcommit 6fa4f03710a101e2ce8a4f11147989222e692da6[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Mon Mar 1 23:04:49 2021 -0600
+
+    Obtengo los cambios que hizo cristian en Child
+
+[33mcommit 8ce5e31664bc3c185cc376d2ec5385f10622c7e6[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 23:04:17 2021 -0600
+
+    Creo el modulo de childRelation
+
+[33mcommit 98d1f5bc4c17cf93b2c561f6644be8c7f6d5be2e[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 19:34:02 2021 -0600
+
+    Se crean los primeros web
+
+[33mcommit 8470b27d2a032524b330a7038daff29bd2246500[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 12:21:34 2021 -0600
+
+    Se borraron los servicios, se unifico todo
+
+[33mcommit 0e64b02e8c863f129bd7ef8bea52c83cfa1e3a1b[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 12:20:42 2021 -0600
+
+    Ultimo respaldo, se realiza una limpieza de compilado
+
+[33mcommit 6286e615a66149c9111b24fbce7a432989b2ecbf[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Mon Mar 1 12:19:30 2021 -0600
+
+    Se unifican los servicios, antes de borrar
+
+[33mcommit 4bb71cb455c82ed9fc2484ce9d87a1d71d0fa56e[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 22:54:18 2021 -0600
+
+    Se solucionan problemas y se limpia el codigo
+
+[33mcommit 09250591e73a21269a948c07f947acd511c197c2[m
+Merge: c35f600 91a46d4
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 22:41:13 2021 -0600
+
+    SE UNEN LOS TRES MODULOS, AY MAMA
+
+[33mcommit c35f600725654f35a7ce2ed814009c37af56b1b3[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 22:38:31 2021 -0600
+
+    Se crea el web services de los modulos comida y factura, se medio probaron
+
+[33mcommit e2592566faa7e1e4f6499ee93c10ac5e4f37d3ea[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 20:50:03 2021 -0600
+
+    nose
+
+[33mcommit 91a46d47632e1eed897a6b178ccb3f408ba1df15[m[33m ([m[1;32mmoduloChilds[m[33m)[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 19:00:12 2021 -0600
+
+    Se crea el webservices de Ninos y se reparan errores
+
+[33mcommit 21240ebdda9d7cc8bb740f051525ef2a5e97b613[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 18:57:45 2021 -0600
+
+    webService de comidas y factura
+
+[33mcommit 57124cdd2619433042d445f57bdef6d3f8cdf547[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 17:37:33 2021 -0600
+
+    commit para crsitian
+
+[33mcommit 85af1a0c2920741f7bc1bcd27f3979919ef05ffa[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 17:35:23 2021 -0600
+
+    trayendo todo
+
+[33mcommit c316a24b9aa55fa1e5cb330f6b39fbeff2ecfb0f[m
+Merge: 367ae89 9a00192
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 17:05:52 2021 -0600
+
+    Se instala el web services
+
+[33mcommit 367ae8940a6cfbf5a9ed32ac92c8ce5d779fcff8[m
+Merge: 6a2aa43 681c74a
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 16:52:00 2021 -0600
+
+    llegada de webServer
+
+[33mcommit 9a001926902f4e10b300ebf93ca05e948a001d08[m[33m ([m[1;32mdevelopement[m[33m)[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 16:49:08 2021 -0600
+
+    Se crea el servicio de CHILD
+
+[33mcommit 6a2aa430cdb35a5bd0006e6275db307a71604acb[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 15:21:59 2021 -0600
+
+    commit por envio de controladores faltantes
+
+[33mcommit 681c74a089acefeaed81e8ed0eb112b950beb54c[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 15:20:28 2021 -0600
+
+    Se arreglan erroes en capa de datos. Se sube para que jose la tenga
+
+[33mcommit 684c045e11de6918dac3660af2bf342b90b5709b[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 15:18:30 2021 -0600
+
+    Extrayendo tod xd
+
+[33mcommit a0288a15f21aa21d251be6cbaf94fb9923790248[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 15:16:37 2021 -0600
+
+    Se finaliza la creacion de la capa de datos, se arreglan las clases desaparecidas
+
+[33mcommit 84998dcec8558841880e9cd1df50bddc7e484c9a[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 15:04:34 2021 -0600
+
+    commi de cache
+
+[33mcommit 3cbed7bc2738a41fb1e0d3ca5ca42104086f95b1[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 14:59:16 2021 -0600
+
+    agregado de parentesis
+
+[33mcommit 78d86ec022c3964b180f1ba552c02a0d41d73095[m
+Merge: ad2210d e411dc8
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 14:57:47 2021 -0600
+
+    merge de cristian a Jose
+
+[33mcommit ad2210da1b22afbadbd0d4af6a62a04ccb9318ce[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 14:52:32 2021 -0600
+
+    Cambio de clases y creacion de cotroladores
+
+[33mcommit e411dc82704a3ccc429ba60007e689012646441c[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 14:51:30 2021 -0600
+
+    Creamos unas clases con su respectivo controller
+
+[33mcommit 6eb0c3165062db5b61cdba792a91bbd0cbd280b4[m
+Merge: 2a0d940 905da81
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 13:53:23 2021 -0600
+
+    Se hace un pull, hay conflictos, se intenta hacer un commite para establecer los cambios de jose
+
+[33mcommit 2a0d9400cb461a02db48d0a5b9f858465a13e7f2[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 13:45:19 2021 -0600
+
+    Extrayendo datos de la visual y base da datos
+
+[33mcommit 905da812bf73dea3809df87878ac326c9fa5ef9f[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 13:42:58 2021 -0600
+
+    Se conecta a la base de datos en la nube
+
+[33mcommit cb189daaaff2f6efeaa91058b79ec54c1c691d0e[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 13:37:36 2021 -0600
+
+    Paso el metodo isconsulta a clsOperaciones, creo child model y controller
+
+[33mcommit 67a52f4b716e203f4eec2623012515d9f1497a7a[m
+Merge: 2f00c24 e0237c1
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 12:23:16 2021 -0600
+
+    Merge branch 'main' of https://github.com/Cristian-RM/guarderia-utn into main
+
+[33mcommit 2f00c24f26101f4377707c65a502d06ee429a486[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 12:23:04 2021 -0600
+
+    haciendo commint para traerme la rama main
+
+[33mcommit e0237c1b61086f34364f208db8ea8b448ea67e4b[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 12:10:37 2021 -0600
+
+    Se crea el controllador de CHILDS
+
+[33mcommit 4801fa25742e86cf639ea2aa852fedd1dbd000a8[m
+Author: Cristian <crismors97@gmail.com>
+Date:   Sun Feb 28 11:55:33 2021 -0600
+
+    Se repara la base de datos, se cambia la fecha de nacimientos de datetime a date
+
+[33mcommit 7673f99ec8b6e827a551cc3a90878797152b0185[m
+Merge: 7dd9d4b d447e62
+Author: Cristian-RM <74938706+Cristian-RM@users.noreply.github.com>
+Date:   Sun Feb 28 11:31:10 2021 -0600
+
+    Merge pull request #1 from Cristian-RM/master
+    
+    Se crea el proyecto, este lleva la base de datos, tablas, procedimien…
+
+[33mcommit d447e625c878fdf540fba0145b424357888c2352[m
+Author: Jose <joseandrespng@gmail.com>
+Date:   Sun Feb 28 11:19:02 2021 -0600
+
+    Se crea el proyecto, este lleva la base de datos, tablas, procedimientos y la capa de datos
+
+[33mcommit 7dd9d4bc379709af10c38be903f85dcedc48886b[m
+Author: Cristian-RM <74938706+Cristian-RM@users.noreply.github.com>
+Date:   Sun Feb 28 11:03:10 2021 -0600
+
+    Initial commit

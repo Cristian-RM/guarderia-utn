@@ -8,18 +8,58 @@ using System.Web.UI.WebControls;
 
 namespace GuarderiaWeb
 {
-    public partial class Child : System.Web.UI.Page
+    public partial class Abonados : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Session["IDchild"] = "";
                 Session["op"] = "";
+                validarSessino();
                 cargarTabla();
             }
             else
             {
+            }
+            cargarTabla();
+        }
+
+        private String validarSessino()
+        {
+            try
+            {
+                int IDrelacion = Convert.ToInt32((string)Session["IDrelacion"]);
+
+                String IDrelacionS = Convert.ToString(IDrelacion);
+                TxtIDchildRelation.Text = IDrelacionS;
+                TxtIDchildRelation.ReadOnly = true;
+
+                TxtIDchildRelation.Text = IDrelacionS;
+                TxtIDchildRelation.ReadOnly = true;
+
+                GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
+                DataTable result = Ws.crudChildRelations(IDrelacion, IDrelacion, "", "g")[0];
+
+                lblRelacion.Text = "(" + result.Rows[0].Field<string>("TipoRelacion") + ")";
+
+                int child = result.Rows[0].Field<int>("IDchild");
+
+                Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
+                result = Ws.crudChild(child, "", "", "", "g");
+
+                lblbebe.Text = result.Rows[0].Field<string>("Nombre");
+
+                if (IDrelacion == 0)
+
+                {
+                    Response.Redirect("Familiares.aspx"); return "";
+                }
+                return IDrelacionS;
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Familiares.aspx");
+                return "";
             }
         }
 
@@ -43,7 +83,7 @@ namespace GuarderiaWeb
             string m = "";
             try
             {
-                DataTable r = sqlExecute("l");
+                DataTable r = sqlExecute("lb");
 
                 tbl.DataSource = r;
                 tbl.DataBind();
@@ -55,64 +95,49 @@ namespace GuarderiaWeb
             }
         }
 
-        //public void cargarEmpresas()
-        //{
-        //    string m = "";
-        //    try
-        //    {
-        //        clsEmpresaController empresaC = new clsEmpresaController();
-        //        empresaC.crud(empresaC.list); //listar
-        //        lstCODCIA.DataSource = empresaC.dataTable;
-        //        lstCODCIA.DataTextField = "NOMBRE_CIA";
-        //        lstCODCIA.DataValueField = "CODCIA";
-        //        lstCODCIA.DataBind();
-        //        m = empresaC.mensajeError;
-        //    }
-        //    catch (Exception es)
-        //    {
-        //        m = es.Message;
-        //        informar(m);
-        //    }
-        //}
-
         protected void tblEmpresas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GridViewRow row = tbl.Rows[tbl.SelectedIndex];
             try
             {
-                GridViewRow row = tbl.Rows[tbl.SelectedIndex];
                 Session["op"] = "u";
-                txtIDmatricula.Text = row.Cells[1].Text;
-                txtNombre.Text = row.Cells[2].Text;
-                txtFechaRegistro.Text = row.Cells[3].Text;
-                txtFechaNacimiento.Text = row.Cells[4].Text;
-                txtFechaRegistro.ReadOnly = true;
-                Session["IDchild"] = row.Cells[1].Text;
-                //btnSempleadoAgregar.Visible = true;
+                TxtID.Text = row.Cells[1].Text;
+                txtDNI.Text = row.Cells[3].Text;
+                txtNombre.Text = row.Cells[4].Text;
+                txtDireccion.Text = row.Cells[5].Text;
+                txtTelefono.Text = row.Cells[6].Text;
+                txtBanco.Text = row.Cells[7].Text;
+                txtCuentaIbam.Text = row.Cells[8].Text;
+
+                TxtID.ReadOnly = true;
+                TxtIDchildRelation.ReadOnly = true;
+                txtDNI.ReadOnly = true;
                 btnEliminar.Visible = true;
+                tbl.SelectedIndex = -1;
                 alertModal.Visible = false;
-                btnSempleadoAgregar.Visible = true;
+
                 encerderModal(1);
             }
             catch (Exception)
             {
-                cargarTabla();
+                throw;
             }
         }
 
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Session["op"] = "i";
-
+            txtDNI.Text = "";
             txtNombre.Text = "";
-            txtFechaNacimiento.Text = "";
-            txtIDmatricula.Text = "";
-            txtFechaRegistro.Text = "";
-            txtFechaRegistro.ReadOnly = true;
+            txtDireccion.Text = "";
+            txtTelefono.Text = "";
+            txtBanco.Text = "";
+            txtCuentaIbam.Text = "";
 
             alertModal.Visible = false;
             btnEliminar.Visible = false;
             btnSempleadoAgregar.Visible = false;
-            tbl.SelectedIndex = -1;
+
             encerderModal(1);
         }
 
@@ -135,26 +160,27 @@ namespace GuarderiaWeb
                 sqlExecute();
                 tbl.SelectedIndex = -1;
                 btnEliminar.Visible = true;
+                cargarTabla();
             }
             catch (Exception)
             {
                 encerderModal(1);
             }
-            cargarTabla();
         }
 
         private DataTable sqlExecute()
         {
             String op = (string)Session["op"];
-
+            informar(op);
             return sqlExecute(op);
         }
 
         private DataTable sqlExecute(string op)
         {
             GuarderiaWeb.ServiceReference1.ServicioGuarderiaSoapClient Ws = new ServiceReference1.ServicioGuarderiaSoapClient();
-            DataTable result = Ws.crudChild(parse(txtIDmatricula.Text), txtNombre.Text, txtFechaRegistro.Text, txtFechaNacimiento.Text, op);
-            Ws.Close();
+            DataTable result = Ws.crudAbonado((parse(TxtID.Text)), (parse(TxtIDchildRelation.Text)), txtDNI.Text,
+                txtNombre.Text, txtDireccion.Text, txtTelefono.Text, txtBanco.Text, txtCuentaIbam.Text, op)[0];
+
             return result;
         }
 
@@ -204,22 +230,17 @@ namespace GuarderiaWeb
             try
             {
                 sqlExecute("d");
+
                 cargarTabla();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                cargarTabla();
+                informar(ex.Message);
             }
         }
 
         protected void btnSempleadoAgregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Familiares.aspx");
-        }
-
-        protected void BTNABONADO_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Alergias.aspx");
         }
     }
 }

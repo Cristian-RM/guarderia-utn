@@ -44,7 +44,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -55,18 +55,24 @@
                     <%--                    <li class="nav-item">
                         <a class="nav-link" href="MaestroCultivos.aspx">Cultivos</a>
                     </li>--%>
-                    <%-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cruds
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="Child.aspx">Niños</a>
+                            <a class="dropdown-item" href="sdfg">Another action</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                    </li>--%>
-                    <li class="nav-item">
-                        <a class="nav-link " href="Personas.aspx" tabindex="-1" aria-disabled="true">Personas</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comida
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Ingrediente.aspx">Ingredientes</a>
+                            <a class="dropdown-item" href="Plato.aspx">Platos</a>
+                            <a class="dropdown-item" href="Menu.aspx">Menu</a>
+                            <div class="dropdown-divider"></div>
+                        </div>
                     </li>
                 </ul>
             </div>

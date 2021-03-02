@@ -98,7 +98,7 @@
                                         <asp:Label ID="lblSNACTIVO" runat="server" Text="Activo" CssClass="mr-3" ToolTip="Esta activo o inacitov como persona."></asp:Label>
                                         <asp:CheckBox ID="chckActivo" runat="server" CssClass="ml-4" />
                                     </div>
-                                </div>--%>--%>
+                                </div>--%>
                                 <%-- EMPLEADO O NO EMPLEADO--%>
 
                                 <div class="col-12 d-flex flex-column justify-content-center align-items-center  mt-3">
@@ -115,7 +115,10 @@
                                 <div class="col-12 d-flex mt-3 justify-content-center ">
                                     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="form-control btn-primary mr-3" OnClick="btnGuardar_Click" />
                                     <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="form-control btn-primary mr-3" OnClick="btnEliminar_Click" />
-                                    <asp:Button ID="btnSempleadoAgregar" runat="server" Text="Relaciones" CssClass="btn btn-primary" OnClick="btnSempleadoAgregar_Click" /><%--   Nombre del botom--%>
+                                </div>
+                                <div class="col-12 d-flex mt-3 justify-content-center ">
+                                    <asp:Button ID="btnSempleadoAgregar" runat="server" Text="Grupos Familiares" CssClass="form-control mr-3 btn btn-outline-success" OnClick="btnSempleadoAgregar_Click" /><%--   Nombre del botom--%>
+                                    <asp:Button ID="BTNABONADO" runat="server" Text="Alergias" CssClass="form-control mr-3 btn btn-outline-info" OnClick="BTNABONADO_Click" />
                                 </div>
                             </div>
                         </div>

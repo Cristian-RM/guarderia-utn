@@ -38,7 +38,7 @@ namespace CapaDatos.Controlladores
                 SqlConnection conectado = new SqlConnection(this.coneccion);
                 conectado.Open();
 
-                SqlCommand coneccion = new SqlCommand("stp_CPMfacturas_CRUD", conectado);
+                SqlCommand coneccion = new SqlCommand("stp_CPMmenu_CRUD", conectado);
                 //coneccion.Connection = conectado;
                 coneccion.CommandType = CommandType.StoredProcedure;
 

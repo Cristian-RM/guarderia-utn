@@ -215,6 +215,12 @@ namespace GuarderiaWeb
 
         protected void btnSempleadoAgregar_Click(object sender, EventArgs e)
         {
+            Response.Redirect("Encargados.aspx");
+        }
+
+        protected void BTNABONADO_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Abonados.aspx");
         }
     }
 }

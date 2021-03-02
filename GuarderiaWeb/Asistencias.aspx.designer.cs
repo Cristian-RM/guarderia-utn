@@ -11,7 +11,7 @@ namespace GuarderiaWeb
 {
 
 
-    public partial class Child
+    public partial class Asistencias
     {
 
         /// <summary>
