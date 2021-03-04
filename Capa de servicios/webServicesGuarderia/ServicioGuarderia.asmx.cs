@@ -17,8 +17,12 @@ namespace webServicesGuarderia
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente.
     // [System.Web.Script.Services.ScriptService]
+
     public class ServicioGuarderia : System.Web.Services.WebService
     {
+        public String mensajeErr = "";
+        public int nummErr = 0;
+
         private List<DataTable> result = new List<DataTable>();
 
         [WebMethod]
@@ -36,8 +40,8 @@ namespace webServicesGuarderia
             factC.operacion = op;
 
             //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
-            String mensajeErr = factC.crud();
-            int nummErr = factC.numError;
+            mensajeErr = factC.crud();
+            nummErr = factC.numError;
 
             DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
             DataTable datos = factC.dataTable;
@@ -411,8 +415,6 @@ namespace webServicesGuarderia
             platoC.operacion = op;
 
             //Realizo la operacion y guardo el mensaje de error en una variable JUNTO CON EL NUMERO DE ERROR
-            String mensajeErr = platoC.crud();
-            int nummErr = platoC.numError;
 
             DataTable infoTable = CreateinfoTable(mensajeErr, nummErr);
             DataTable datos = platoC.dataTable;
