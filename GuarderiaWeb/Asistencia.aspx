@@ -7,8 +7,7 @@
         <div class="col-12 text-left">
             <div class="col-form-label  pl-3 text-capitalize">
                 <%--  Cambiar el nombre del objeto--%>
-                <label runat="server">Administrar Alergias de  </label>
-                <asp:Label ID="lblbebe" runat="server" Text="Relacion"></asp:Label>
+                <label runat="server">Administrar Asistencias  </label>
 
                 <%--Nombre de la pagina--%>
             </div>
@@ -18,7 +17,7 @@
     <div class="row mb-3 ">
         <div class="col-12 " style="left: 0px; top: 0px">
             <div class="col-form-label">
-                <h4>Lista de Ingredientes Alergicos</h4>
+                <h4>Lista de Asistencias</h4>
                 <%-- Listar objetos--%>
             </div>
         </div>
@@ -56,10 +55,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <%--CAMBIAR NOMBRE mODAL--%>
-                        <h5 class="modal-title" id="staticBackdropLabel">Administrar Ingredientes</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Administrar Asistencia</h5>
                         <%-- Titulo del modal--%>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span> 
                         </button>
                     </div>
                     <div class="modal-body">
@@ -81,7 +80,7 @@
 
                                 <div class="col-12 d-flex flex-column mt-3">
                                     <div class="d-flex">
-                                        <asp:Label ID="lblIngrediente" runat="server" Text="Ingrediente" CssClass="" ToolTip="" Width="100px"></asp:Label>
+                                        <asp:Label ID="lblIngrediente" runat="server" Text="Nombre" CssClass="" ToolTip="" Width="100px"></asp:Label>
                                         <asp:DropDownList ID="txtIngrediente" runat="server" ReadOnly="true" CssClass="form-control ml-4"></asp:DropDownList>
                                     </div>
                                 </div>

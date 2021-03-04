@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -68,7 +65,7 @@ namespace GuarderiaWeb
                 tbl.SelectedIndex = -1;
                 alertModal.Visible = false;
                 Session["plato"] = txtNombre.Text;
-
+                btnSempleadoAgregar.Visible = true;
                 encerderModal(1);
             }
             catch (Exception)

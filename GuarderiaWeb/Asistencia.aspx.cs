@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -80,6 +77,17 @@ namespace GuarderiaWeb
                 ListItem item = txtIngrediente.Items.FindByValue(row.Cells[2].Text);
                 txtIngrediente.SelectedIndex = txtIngrediente.Items.IndexOf(item);
                 txtIngrediente.Enabled = false;
+
+                txtFechaRegistro.Text = row.Cells[3].Text;
+
+                txtMes.Text = row.Cells[4].Text;
+
+                txtHoraEntrada.Text = row.Cells[5].Text;
+
+                txtHoraSalida.Text = row.Cells[6].Text;
+
+                txtDetalle.Text = row.Cells[7].Text;
+
 
                 btnEliminar.Visible = true;
                 tbl.SelectedIndex = -1;
